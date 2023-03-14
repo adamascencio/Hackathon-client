@@ -5,21 +5,16 @@ type fruitIcon = "🍏" | "🍇" | "🍈" | "🍉" | "🍊" | "🍋" | "🍌" | 
 type sweetsIcon = "🍦" | "🍬" | "🍧" | "🍩" | "🍨" | "🍪" | "🎂" | "🍰" | "🧁" | "🥧" | "🍫" | "🍭" | "🍮" | "🍯" 
 type monsterIcon = "👻" | "👾" | "🤖" | "👺" | "🧜" 
 
-const emotes = {
-    "fruits": ["🍏", "🍇", "🍧", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍏", "🍐", "🍒", "🍓", "🥥"],
-    "sweets": ["🍦", "🍬", "🍈", "🍩", "🍨", "🍪", "🎂", "🍍", "🍰", "🧁", "🥧", "🍫", "🍭", "🍮", "🍯"],
-    "monsters": ["👻", "👾", "🤖", "👺", "🧜"],
-}
+   export const fruits = ["🍏", "🍇", "🍧", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍏", "🍐", "🍒", "🍓", "🥥"]
+    export const sweets = ["🍦", "🍬", "🍈", "🍩", "🍨", "🍪", "🎂", "🍍", "🍰", "🧁", "🥧", "🍫", "🍭", "🍮", "🍯"]
+    export const monsters = ["👻", "👾", "🤖", "👺", "🧜"]
 
 class equationAndAnswser {
     equation: any;
     answer: any;
-    emoji: fruitIcon | sweetsIcon | monsterIcon;
-    constructor(equation:any, answer:any, emoji:fruitIcon | sweetsIcon | monsterIcon) {
+    constructor(equation:any, answer:any, ) {
         this.equation = equation,
-        this.answer = answer,
-        this.emoji = emoji
-
+        this.answer = answer
     }
 }
 
@@ -155,9 +150,7 @@ const generateAmountAndGoal = (max:number) => {
     }else {
         return obj
     }
-
 }
-generateAmountAndGoal(6)
 
 const pickRandomNumAndOperator = (numOfNumbers: any, numOfOperations: any, multiplier: number, questions: number) => {
            let equation:Array<any> = []
@@ -197,7 +190,7 @@ const pickRandomNumAndOperator = (numOfNumbers: any, numOfOperations: any, multi
             }
         }
         )
-        arrOfEqs.push(new equationAndAnswser(flatEq.join(' '), eval(flatEq.join(''))))
+        arrOfEqs.push(new equationAndAnswser(flatEq.join(' '), eval(flatEq.join('')), ))
     }
 
 
