@@ -26,7 +26,7 @@ import { User } from './types/models'
 
 function App(): JSX.Element {
   const navigate = useNavigate()
-  console.log(calculate(1, 1, 0))
+  
   const [user, setUser] = useState<User | null>(authService.getUser())
 
   const handleLogout = (): void => {
@@ -38,6 +38,8 @@ function App(): JSX.Element {
   const handleAuthEvt = (): void => {
     setUser(authService.getUser())
   }
+  
+  console.log(calculate(3, 9))
 
   return (
     <>
