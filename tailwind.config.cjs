@@ -19,7 +19,11 @@ module.exports = {
           loginBtnLight: "rgb(67, 80, 142)"
         },
         fontFamily: {
-          poppins: ["Poppins", "sans-serif"],
+          nunito: ['Nunito', "sans-serif"]
+        },
+        translate: {
+          xInput: "translate(12px) scale(1)",
+          yInput: "translate(16px) scale(1)"
         },
       },
       screens: {

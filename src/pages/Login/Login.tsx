@@ -4,9 +4,6 @@ import { useState } from 'react'
 // components
 import LoginForm from '../../Components/LoginForm/LoginForm'
 
-// stylesheets
-import styles from './Login.module.css'
-
 // types
 interface LoginPageProps {
   handleAuthEvt: () => void;
@@ -14,12 +11,11 @@ interface LoginPageProps {
 
 const LoginPage = (props: LoginPageProps): JSX.Element => {
   const [message, setMessage] = useState('')
-
   const updateMessage = (msg: string): void => setMessage(msg)
 
   return (
-    <main className={styles.container}>
-      <h1>Log In</h1>
+    <main className='flex place-content-center text-center flex-col h-screen bg-lpBg text-white px-8 gap-8'>
+      <h1 className='text-4xl'>Welcome Back</h1>
       <p>{message}</p>
       <LoginForm {...props} updateMessage={updateMessage} />
     </main>

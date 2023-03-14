@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react'
 
 // services
-import * as profileService from '../../services/profileService'
+import * as profileService from '../../Services/profileService'
 
 // types
 import { Profile } from '../../types/models'
+
+import { ProfileDailyChallenge, ProfileFeaturedGames, ProfileMathByTopic } from './ProfileComps'
 
 const Profiles = (): JSX.Element => {
   const [profiles, setProfiles] = useState<Profile[]>([])
@@ -23,14 +25,21 @@ const Profiles = (): JSX.Element => {
     fetchProfiles()
   }, [])
 
-  if(!profiles.length) return <p>No profiles yet</p>
-
   return (
-    <>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.map((profile: Profile) =>
-        <p key={profile.id}>{profile.name}</p>
-      )}
+    <>     
+     <div className="flex">
+      <div className='text-[35px] font-bold mt-10 ml-2 font-nunito'>Welcome back!</div>
+      <img src="" alt="" className='rounded-[50%] border-black border-[1px] w-20 h-20 ml-auto m-4'></img>
+    </div>
+
+    <div className="flex flex-col gap-4">
+    <ProfileDailyChallenge/>
+    <ProfileFeaturedGames/>
+    <div className='w-screen overflow-x-scroll'>
+    <ProfileMathByTopic/>
+    </div>
+    </div>
+
     </>
   )
 }

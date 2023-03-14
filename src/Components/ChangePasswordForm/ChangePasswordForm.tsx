@@ -3,15 +3,15 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 // services
-import * as authService from '../../services/authService'
+import * as authService from '../../Services/authService'
 
 // stylesheets
 import styles from './ChangePasswordForm.module.css'
 
 // types
-import { AuthFormProps } from '../../types/props'
-import { ChangePasswordFormData } from '../../types/forms'
-import { handleErrMsg } from '../../types/validators'
+import { AuthFormProps } from '../../Types/props'
+import { ChangePasswordFormData } from '../../Types/forms'
+import { handleErrMsg } from '../../Types/validators'
 
 const ChangePasswordForm = (props: AuthFormProps): JSX.Element => {
   const {updateMessage, handleAuthEvt} = props
