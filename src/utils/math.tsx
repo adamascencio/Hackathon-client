@@ -1,14 +1,28 @@
 export const operators = ["+", "-"]
 let arrOfEqs:Array<any> = []
 
+type fruitIcon = "🍏" | "🍇" | "🍈" | "🍉" | "🍊" | "🍋" | "🍌" | "🍍" | "🥭" | "🍎" | "🍏" | "🍐" | "🍒" | "🍓" | "🥥" 
+type sweetsIcon = "🍦" | "🍬" | "🍧" | "🍩" | "🍨" | "🍪" | "🎂" | "🍰" | "🧁" | "🥧" | "🍫" | "🍭" | "🍮" | "🍯" 
+type monsterIcon = "👻" | "👾" | "🤖" | "👺" | "🧜" 
+
+const emotes = {
+    "fruits": ["🍏", "🍇", "🍧", "🍉", "🍊", "🍋", "🍌", "🍍", "🥭", "🍎", "🍏", "🍐", "🍒", "🍓", "🥥"],
+    "sweets": ["🍦", "🍬", "🍈", "🍩", "🍨", "🍪", "🎂", "🍍", "🍰", "🧁", "🥧", "🍫", "🍭", "🍮", "🍯"],
+    "monsters": ["👻", "👾", "🤖", "👺", "🧜"],
+}
+
 class equationAndAnswser {
     equation: any;
     answer: any;
-    constructor(equation:any, answer:any) {
+    emoji: fruitIcon | sweetsIcon | monsterIcon;
+    constructor(equation:any, answer:any, emoji:fruitIcon | sweetsIcon | monsterIcon) {
         this.equation = equation,
-        this.answer = answer
+        this.answer = answer,
+        this.emoji = emoji
+
     }
 }
+
 
 export default function calculate(world: number, level: number) {
     switch(world){
@@ -132,6 +146,18 @@ export default function calculate(world: number, level: number) {
     return arrOfEqs
 }
 
+const generateAmountAndGoal = (max:number) => {
+    let randomAmt = Math.floor(Math.random() * 1 + max)
+    let randomGoal = Math.floor(Math.random() * max)
+    let obj = {"amtOfEmojis": randomAmt, "goal": randomGoal}
+    if(obj.amtOfEmojis <= obj.goal || obj.goal == 0){
+        generateAmountAndGoal(max)
+    }else {
+        return obj
+    }
+
+}
+generateAmountAndGoal(6)
 
 const pickRandomNumAndOperator = (numOfNumbers: any, numOfOperations: any, multiplier: number, questions: number) => {
            let equation:Array<any> = []

@@ -6,12 +6,12 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './LoginForm.module.css'
 
 // stylesheets
-import * as authService from '../../services/authService'
+import * as authService from '../../Services/authService'
 
 // types
-import { AuthFormProps } from '../../types/props'
-import { LoginFormData } from '../../types/forms'
-import { handleErrMsg } from '../../types/validators'
+import { AuthFormProps } from '../../Types/props'
+import { LoginFormData } from '../../Types/forms'
+import { handleErrMsg } from '../../Types/validators'
 
 const LoginForm = (props: AuthFormProps): JSX.Element => {
   const {updateMessage, handleAuthEvt} = props
