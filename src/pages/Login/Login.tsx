@@ -2,7 +2,7 @@
 import { useState } from 'react'
 
 // components
-import LoginForm from '../../components/LoginForm/LoginForm'
+import LoginForm from '../../Components/LoginForm/LoginForm'
 
 // stylesheets
 import styles from './Login.module.css'

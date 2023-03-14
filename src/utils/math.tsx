@@ -21,7 +21,7 @@ export default function calculate(world: any, num1: any, num2: any) {
 const pickRandomNumAndOperator = (num1: any, num2: any) => {
            let equation:Array<any> = []
     let eqNums:Array<any> = []
-    let eqOps:Array<any> =[]
+    let eqOps:Array<any> = []
     //generates x number of random numbers
     while(eqNums.length <= num1) {
        let randomNum = Math.round(Math.random() * 10)

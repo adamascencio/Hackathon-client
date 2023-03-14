@@ -1,6 +1,6 @@
 // services
-import * as tokenService from './tokenService'
-import { addPhoto as addProfilePhoto } from './profileService'
+import * as tokenService from '../Services/tokenService'
+import { addPhoto as addProfilePhoto } from '../Services/profileService'
 
 // types
 import { 
@@ -8,7 +8,7 @@ import {
   LoginFormData,
   SignupFormData,
   PhotoFormData
-} from '../types/forms'
+} from '../Types/forms'
 import { User } from '../types/models'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/auth`
