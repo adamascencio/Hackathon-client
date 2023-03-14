@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import ProfilePage from './pages/Profile/Profile'
 
 // components
 import NavBar from './Components/NavBar/NavBar'
@@ -59,6 +60,14 @@ function App(): JSX.Element {
           element={
             <ProtectedRoute user={user}>
               <Profiles />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfilePage user={user}/>
             </ProtectedRoute>
           }
         />

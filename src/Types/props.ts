@@ -1,6 +1,11 @@
+import { User } from "../types/models";
+
+
 /* ---------======= custom props ======--------- */
 
-
+export interface ProfileProps {
+  user: User | null,
+}
 
 /* ---------===== auth form props =====--------- */
 
