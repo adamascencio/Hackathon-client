@@ -12,7 +12,11 @@ module.exports = {
           dimWhite: "rgba(255, 255, 255, 0.7)",
           dimBlue: "rgba(9, 151, 124, 0.1)",
           blues: '#aeecfc',
-          transBlack: "rgba(0, 0, 0, 0.5)"
+          transBlack: "rgba(0, 0, 0, 0.5)",
+          lpBg: "rgb(80, 100, 186)",
+          btnBorder: "rgb(60, 73, 126)",
+          loginBtnDark: "rgb(46, 56, 80)",
+          loginBtnLight: "rgb(67, 80, 142)"
         },
         fontFamily: {
           poppins: ["Poppins", "sans-serif"],
