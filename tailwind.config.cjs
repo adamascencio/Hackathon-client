@@ -21,6 +21,10 @@ module.exports = {
         fontFamily: {
           poppins: ["Poppins", "sans-serif"],
         },
+        translate: {
+          xInput: "translate(12px) scale(1)",
+          yInput: "translate(16px) scale(1)"
+        },
       },
       screens: {
         xs: "480px",
