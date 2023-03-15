@@ -20,7 +20,7 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState<LoginFormData>({
-    username: '',
+    email: '',
     password: '',
   })
 
@@ -41,10 +41,10 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
     }
   }
 
-  const { username, password } = formData
+  const { email, password } = formData
 
   const isFormInvalid = (): boolean => {
-    return !(username && password)
+    return !(email && password)
   }
 
   return (
@@ -57,16 +57,16 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
         <div className="relative inline-flex items-center">
           <input
             type="text"
-            id="username"
-            value={formData.username}
-            name="username"
+            id="email"
+            value={formData.email}
+            name="email"
             onChange={handleChange}
             className='rounded-lg px-3 py-2 opacity-50 text-black font-bold text-lg'
           />
-          {formData.username === '' && 
+          {formData.email === '' && 
           <div className="absolute left-7 top-2 text-lpBg font-light flex items-center gap-2">
             <BsFillPersonFill />
-            <label htmlFor='username'>Username</label>
+            <label htmlFor='email'>email</label>
           </div>
           }
         </div>

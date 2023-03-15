@@ -27,7 +27,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
           <NavLink to="/profiles"><AiFillHome/></NavLink>
           <NavLink to="/profiles"><CgMathDivide/></NavLink>
           <NavLink to="/profiles"><TbSwords/></NavLink>
-          <NavLink to="/profiles"><BsFillPersonFill/></NavLink>
+          <NavLink to="/profile"><BsFillPersonFill/></NavLink>
           </>
       :
           <>
