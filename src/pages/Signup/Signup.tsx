@@ -2,10 +2,7 @@
 import { useState } from 'react'
 
 // components
-import SignupForm from '../../components/SignupForm/SignupForm'
-
-// stylesheets
-import styles from './Signup.module.css'
+import SignupForm from '../../Components/SignupForm/SignupForm'
 
 // types
 interface SignupProps {
@@ -18,9 +15,7 @@ const Signup = (props: SignupProps): JSX.Element => {
   const updateMessage = (msg: string): void => setMessage(msg)
 
   return (
-    <main className={styles.container}>
-      <h1>Sign Up</h1>
-      <p>{message}</p>
+    <main className='flex items-center justify-center w-screen h-screen'>
       <SignupForm {...props} updateMessage={updateMessage} />
     </main>
   )
