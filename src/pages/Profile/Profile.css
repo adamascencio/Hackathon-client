@@ -3,7 +3,7 @@
 #profile-page {
   display: flex;
   flex-direction: column;
-  background-image: url('/public/profile-background.png');
+  background-image: url('/profile-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   font-family: nunito;
