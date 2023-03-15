@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 
 //types
 import { Profile } from "../../types/models";
-import { ProfileProps } from "../../Types/props";
 
 // services
 import * as profileService from '../../Services/profileService'
@@ -11,7 +10,7 @@ import * as profileService from '../../Services/profileService'
 // stylesheets
 import './Profile.css'
 
-const ProfilePage = (props: ProfileProps) => {
+const ProfilePage = (props: any) => {
   const { user } = props
 
   const profileId = user!.profile.id
