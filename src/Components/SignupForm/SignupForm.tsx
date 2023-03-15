@@ -29,7 +29,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
   const [page2, setPage2] = useState(whiteRect)
   const [page3, setPage3] = useState(whiteRect)
   const [page4, setPage4] = useState(whiteRect)
-  const pageRef = useRef(1)
+  const [page, setPage] = useState(1)
   const {updateMessage, handleAuthEvt} = props
   const navigate = useNavigate()
 
@@ -74,39 +74,48 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
     return !(name && email && password && password === passwordConf)
   }
   function changePage(){
-    switch(pageRef.current){
+    switch(page){
       case 1:
+        if(email == "" || password == "" || passwordConf == "") {
+          alert("fields missing!")
+        }else if(password != passwordConf) {
+          alert('passwords do not match')
+        }else{
         setPage1(blackRect)
-        pageRef.current = pageRef.current +1
+        setPage(prev => prev +1)
+        }
         break
       case 2:
         setPage2(blackRect)
-        pageRef.current = pageRef.current +1
+        setPage(prev => prev +1)
         break
       case 3:
         setPage3(blackRect)
-        pageRef.current = pageRef.current +1
+        setPage(prev => prev +1)
         break
       case 4:
         setPage4(blackRect)
-        pageRef.current = pageRef.current +1 
+        setPage(prev => prev +1)
         navigate('/login')
         break
     }
   }
   const goBack = () => {
-    switch(pageRef.current){
-      case 2:
-        setPage2(whiteRect)
-        pageRef.current = pageRef.current -1
-        break
+    switch(page){
+        case 2:
+          console.log(page)
+         setPage2(whiteRect)  
+         setPage(prev => prev -1)
+         break
       case 3:
+        console.log(page)
         setPage3(whiteRect)
-        pageRef.current = pageRef.current -1
+        setPage(prev => prev -1)
         break
       case 4:
+        console.log(page)
         setPage4(whiteRect)
-        pageRef.current = pageRef.current -1
+        setPage(prev => prev -1)
         break
     }
   }
@@ -124,7 +133,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
       
     <form onSubmit={handleSubmit}>
   
-   {pageRef.current == 1?
+   {page == 1?
    <>     
     <h1 className='text-2xl text-center font-nunito font-boldest mt-[-2rem] mb-10'>Welcome to Addventures!</h1>
     <div className="flex flex-col h-32">
@@ -157,7 +166,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
       </div>
       </>
       :null}        
-       {pageRef.current == 2? 
+       {page == 2? 
        <>
            <h1 className='text-2xl text-center font-nunito font-boldest mt-[-2rem] mb-10'>Choose Your Avatar</h1>
                 <div>
@@ -174,7 +183,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
               </>
               :null}
 
-        {pageRef.current == 3? 
+        {page == 3? 
        <>
            <h1 className='text-[3rem] text-center font-nunito font-boldest mt-[-8rem]'>Grade Level</h1>
                 <div className='flex gap-20 w-screen items-center justify-center'>
@@ -195,7 +204,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
               </>
               :null}
 
-      {pageRef.current == 4? 
+      {page == 4? 
        <>
            <h1 className='text-2xl text-center font-nunito font-boldest mt-[-6rem] mb-10'>Personalize your learning <br /> experience?</h1>
                 <div>
@@ -214,11 +223,11 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
               </div>
               </>
               :null}
-            {pageRef.current == 4? 
+            {page == 4? 
               <div onClick={(e) => handleSubmit(e)} className='rounded-xl cursor-pointer bg-martianMauve h-15 mt-10 text-white text-center font-bolder py-4'>{!isSubmitted ? "Create Accout with personalizations" : "🚀 Sending..."}</div>
             :<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer bg-martianMauve h-15 mt-10 text-white text-center font-bolder py-4'>Continue</div>
           }
-          {pageRef.current != 1?<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer h-15 mt-4 text-valvetNight border-[3px] border-valvetNight text-center font-bolder py-4'>Skip {pageRef.current == 4?"and Create account" :null }</div> :null}
+          {page != 1?<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer h-15 mt-4 text-valvetNight border-[3px] border-valvetNight text-center font-bolder py-4'>Skip {page== 4?"and Create account" :null }</div> :null}
 
 </form>
       </div>
