@@ -45,6 +45,18 @@ const Level1 = (props: LevelProps): JSX.Element => {
         }
     };
 
+     //! Maripi request - once a level has been completed, trigger an update to progress to set levelCompleted === true
+  // useEffect((): void => {
+  //   const updateProgress = async (): Promise<void> => {
+  //     try {
+  //       await progressService.updateProgress(progressId, formData)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   updateProgress()
+  // }, [user])
+
     return (
 
 //<div className={completed == 5 ? "bg-galaxy" : "bg-orbit-no-rings"}>
