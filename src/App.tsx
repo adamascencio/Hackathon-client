@@ -11,6 +11,7 @@ import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import ProfilePage from "./pages/Profile/Profile";
 import Worlds from "./pages/Worlds";
 import Level1 from "./pages/Levels/Level1";
+import Level2 from "./pages/Levels/Level2";
 
 // components
 import NavBar from "./Components/NavBar/NavBar";
@@ -77,6 +78,7 @@ function App(): JSX.Element {
             {user && <NavBar user={user} handleLogout={handleLogout} />}
             <Routes>
                 <Route path="/level1" element={<Level1 />} />
+                <Route path="/level2" element={<Level2 />} />
                 <Route path="/" element={<Landing user={user} />} />
                 <Route path="/worlds" element={<Worlds user={user} />} />
                 <Route
