@@ -11,32 +11,7 @@ import * as profileService from '../../Services/profileService'
 import './Profile.css'
 
 const ProfilePage = (props: any) => {
-  const { user } = props
-
-  const profileId = user!.profile.id
-
-  const [profile, setProfile] = useState<Profile>({
-    name: "",
-    userName: "",
-    photo: "",
-    id: 0,
-    createdAt: "",
-    updatedAt: "",
-  })
-
-  useEffect((): void => {
-    const fetchProfile = async (): Promise<void> => {
-      try {
-        console.log("profileId", profileId)
-        const profileData: Profile = await profileService.getProfile(profileId)
-        console.log("profileData", profileData)
-        setProfile(profileData)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    fetchProfile()
-  }, [user])
+  const { user, profile } = props
 
 
   return (
