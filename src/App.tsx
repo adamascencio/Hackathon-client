@@ -19,6 +19,7 @@ import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 // services
 import * as authService from "./Services/authService";
 import * as profileService from '../src/Services/profileService'
+import * as progressService from '../src/Services/progressService'
 
 // stylesheets
 import "./css/app.css";
@@ -58,9 +59,7 @@ function App(): JSX.Element {
   useEffect((): void => {
     const fetchProfile = async (): Promise<void> => {
       try {
-        console.log("profileId", profileId)
         const profileData: Profile = await profileService.getProfile(profileId)
-        console.log("profileData", profileData)
         setProfile(profileData)
       } catch (error) {
         console.log(error)
@@ -70,14 +69,17 @@ function App(): JSX.Element {
   }, [user])
 
 
-  // Maripi request
-  useEffect((): void => {
-    try {
-
-    } catch (error) {
-      console.log(error)
-    }
-  }, [user])
+  //! Maripi request - once a level has been completed, trigger an update to progress to set levelCompleted === true
+  // useEffect((): void => {
+  //   const updateProgress = async (): Promise<void> => {
+  //     try {
+  //       await progressService.updateProgress(progressId, formData)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   updateProgress()
+  // }, [user])
 
   return (
     <>

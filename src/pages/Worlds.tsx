@@ -21,15 +21,15 @@ const Worlds = (props: WorldsProps): JSX.Element => {
 
   const [progress, setProgress] = useState<Progress>({
     profile: profile.id,
-    // need to be able to add level and world id to this form
+    //! need to be able to add level and world id to this form
     level: 0,
     world: 0,
     levelCompleted: false,
-    // i'm not sure what is supposed to be in exercisesComplete
+    //! i'm not sure what is supposed to be in exercisesComplete
     // exercisesComplete: "",
   })
 
-
+  //! once start button is implemented we'll set an onClick for that element to trigger the below function
   const handleLevelStart = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
     try {

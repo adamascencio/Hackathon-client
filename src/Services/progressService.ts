@@ -23,9 +23,17 @@ async function createProgress(formData: progressFormData): Promise<Progress> {
     throw error
   }
 }
-async function updateProgress(profileId: number): Promise<void> {
+async function updateProgress(formData: progressFormData, progressId: number): Promise<Progress> {
   try {
-
+    const res = await fetch(`${BASE_URL}/${progressId}/update`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      },
+      body: JSON.stringify(formData),
+    })
+    return await res.json() as Progress
   } catch (error) {
     throw error
   }
