@@ -46,9 +46,13 @@ const Level1 = (props: LevelProps): JSX.Element => {
     };
 
     return (
+
+<div className="bg-orbit-no-rings">
+
+        
         <div
             className={
-                "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1 " +
+                "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1" +
                 (completed == 5 && "success-screen")
             }
         >
@@ -75,12 +79,8 @@ const Level1 = (props: LevelProps): JSX.Element => {
                 </NavLink>
             )}
             {/* Rocket Holder */}
-            <div
-                className={
-                    "relative w-full h-[24rem] flex flex-col items-center justify-center " +
-                    (completed == 5 && "animate-bounce")
-                }
-            >
+            <div className="relative w-full h-[24rem] flex flex-col items-center justify-center">
+                <div className="">
                 <Rocket />
                 </div>
                 <div className="flex flex-col-reverse items-center justify-center z-10 absolute top gap-8">
@@ -163,12 +163,13 @@ const Level1 = (props: LevelProps): JSX.Element => {
                     </>
                 ) : (
                     <NavLink to="/completed">
-                        <button className="h-12 w-64 rounded rounded-[1rem] text-xl text-white bg-beyondBlue my-2">
+                        <button className="py-4 px-24 bg-gray-300 rounded rounded-[1.5rem] text-2xl text-white bg-[#DB7373]">
                             Continue
                         </button>
                     </NavLink>
                 )}
             </div>
+        </div>
         </div>
     );
 };
