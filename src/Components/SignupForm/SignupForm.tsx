@@ -29,6 +29,7 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
   const [page2, setPage2] = useState(whiteRect)
   const [page3, setPage3] = useState(whiteRect)
   const [page4, setPage4] = useState(whiteRect)
+  const [pfp, setPfp] = useState()
   const [page, setPage] = useState(1)
   const {updateMessage, handleAuthEvt} = props
   const navigate = useNavigate()
