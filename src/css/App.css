@@ -1,5 +1,5 @@
 .logo-gradient {
-    background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
+    background: linear-gradient(to right, #0085FF 0%, #9747FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -122,15 +122,15 @@
 .bg-orbit {
     background-image: url("/src/assets/BG-orbit-1.svg");
     background-position: stretch;
-    background-size: cover;
+    background-size: fill;
 }
 .bg-orbit-no-rings {
     background-image: url("/src/assets/BG-orbit-NoRings.svg");
     background-position: stretch;
-    background-size: cover;
+    background-size: fill;
 }
 .bg-galaxy {
     background-image: url("/src/assets/BG-galaxy.svg");
     background-position: stretch;
-    background-size: cover;
+    background-size: fill;
 }

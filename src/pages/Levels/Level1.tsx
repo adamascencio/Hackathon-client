@@ -47,9 +47,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
 
     return (
 
-<div className="bg-orbit-no-rings">
-
-        
+<div className={completed == 5 ? "bg-galaxy" : "bg-orbit-no-rings"}>
         <div
             className={
                 "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1" +
