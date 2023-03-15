@@ -82,6 +82,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
                 }
             >
                 <Rocket />
+                </div>
                 <div className="flex flex-col-reverse items-center justify-center z-10 absolute top gap-8">
                     {completed !== 5 &&
                         rocketBox.map((e, i) => {
