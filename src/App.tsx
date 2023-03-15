@@ -50,6 +50,7 @@ function App(): JSX.Element {
         <Route path="/signup" element={<Signup handleAuthEvt={handleAuthEvt} />}/>
         <Route path="/login" element={<Login handleAuthEvt={handleAuthEvt} />}/>
         <Route path="/profiles" element={<ProtectedRoute user={user}><Profiles /></ProtectedRoute>}/>
+        <Route path="/profile" element={<ProtectedRoute user={user}><ProfilePage user={user}/></ProtectedRoute>}/>
         <Route path="/change-password" element={ <ProtectedRoute user={user}><ChangePassword handleAuthEvt={handleAuthEvt} /></ProtectedRoute>}/>
       </Routes>
     </>
