@@ -5,7 +5,7 @@
 /* ---------===== auth forms =====--------- */
 
 export interface LoginFormData {
-    username: string;
+    email: string;
     password: string;
   }
   

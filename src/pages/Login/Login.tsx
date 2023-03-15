@@ -14,8 +14,7 @@ const LoginPage = (props: LoginPageProps): JSX.Element => {
   const updateMessage = (msg: string): void => setMessage(msg)
 
   return (
-    <main className='flex place-content-center text-center flex-col h-screen bg-lpBg text-white px-8 gap-8'>
-      <h1 className='text-4xl'>Welcome Back</h1>
+    <main>
       <p>{message}</p>
       <LoginForm {...props} updateMessage={updateMessage} />
     </main>
