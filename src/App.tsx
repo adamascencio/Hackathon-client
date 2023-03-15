@@ -1,6 +1,6 @@
-// npm modules 
+// npm modules
 import React, { useEffect, createContext, useState } from "react";
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 // page components
 import Signup from './pages/Signup/Signup'
@@ -10,45 +10,44 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import ProfilePage from './pages/Profile/Profile'
 import Worlds from "./pages/Worlds";
-
-
+import Level1 from "./pages/Levels/Level1";
 
 // components
-import NavBar from './Components/NavBar/NavBar'
-import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute'
+import NavBar from "./Components/NavBar/NavBar";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 
 // services
-import * as authService from './Services/authService'
+import * as authService from "./Services/authService";
 
 // stylesheets
-import './css/app.css'
+import "./css/app.css";
 
 //utils
-import calculate from './utils/math'
+import calculate from "./utils/math";
 // types
-import { Profile, User } from './types/models'
+import { Profile, User } from "./types/models";
 
 function App(): JSX.Element {
-  const navigate = useNavigate()
-  
   const [user, setUser] = useState<User | null>(authService.getUser())
+  const navigate = useNavigate()
 
   const handleLogout = (): void => {
     authService.logout()
     setUser(null)
     navigate('/')
   }
-
-  const handleAuthEvt = (): void => {
+                    
+   const handleAuthEvt = (): void => {
     setUser(authService.getUser())
-  }
-  
-  console.log(calculate(5, 10))
-
+  }                       
+                        
+                    
+  console.log(calculate(5, 10)
   return (
     <>
       {user && <NavBar user={user} handleLogout={handleLogout} />}
       <Routes>
+        <Route path="/level1" element={<Level1 />} />
         <Route path="/" element={<Landing user={user} />} />
         <Route path="/worlds" element={<Worlds user={user} />} />
         <Route path="/signup" element={<Signup handleAuthEvt={handleAuthEvt} />}/>
@@ -61,4 +60,4 @@ function App(): JSX.Element {
   )
 }
 
-export default App
+export default App;
