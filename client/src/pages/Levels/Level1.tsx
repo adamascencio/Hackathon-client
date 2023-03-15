@@ -70,7 +70,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
                 {/* Button Options */}
                 <div className="flex gap-6 flex-col justify-center">
                     <NavLink to="/completed">
-                        <button className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-2">
+                        <button className="h-12 w-64 rounded text-xl text-white bg-beyondBlue my-2">
                             Continue
                         </button>
                     </NavLink>
