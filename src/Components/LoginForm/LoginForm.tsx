@@ -55,7 +55,7 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
 <div className='w-screen flex flex-col items-center justify-center h-screen'>
 <img src={rocket} className="w-60 rotate-45 z-[-1]" />
 <form  className="border-gray-500 flex flex-col gap-5 border-[2px] shadow-2xl rounded-2xl w-[90%] h-[50%] p-5 mb-40" autoComplete="off" onSubmit={handleSubmit}>
-<h1 className='text-2xl text-center font-nunito font-boldest mb-6'>Welcome to Mathscots!</h1>
+<h1 className='text-2xl text-center font-nunito font-boldest mb-6'>Welcome to Addventures!</h1>
 
 <div className="flex flex-col h-20">
   <label htmlFor="email" className="font-nunito text-xl font-bolder" >Email</label>

@@ -9,6 +9,9 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import ProfilePage from './pages/Profile/Profile'
+import Worlds from "./pages/Worlds";
+
+
 
 // components
 import NavBar from './Components/NavBar/NavBar'
@@ -47,6 +50,7 @@ function App(): JSX.Element {
       {user && <NavBar user={user} handleLogout={handleLogout} />}
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route path="/worlds" element={<Worlds user={user} />} />
         <Route path="/signup" element={<Signup handleAuthEvt={handleAuthEvt} />}/>
         <Route path="/login" element={<Login handleAuthEvt={handleAuthEvt} />}/>
         <Route path="/profiles" element={<ProtectedRoute user={user}><Profiles /></ProtectedRoute>}/>
