@@ -30,25 +30,26 @@ import { Profile, User } from "./types/models";
 import Completed from "./pages/Levels/Completed";
 
 function App(): JSX.Element {
-    const [user, setUser] = useState<User | null>(authService.getUser());
-    const navigate = useNavigate();
+  const [user, setUser] = useState<User | null>(authService.getUser());
+  const navigate = useNavigate();
 
-    const handleLogout = (): void => {
-        authService.logout();
-        setUser(null);
-        navigate("/");
-    };
+  const handleLogout = (): void => {
+    authService.logout();
+    setUser(null);
+    navigate("/");
+  };
 
-    const handleAuthEvt = (): void => {
-        setUser(authService.getUser());
-    };
+  const handleAuthEvt = (): void => {
+    setUser(authService.getUser());
+  };
 
-  const profileId = user?.profile.id
+  const profileId = user!.profile.id
 
   const [profile, setProfile] = useState<Profile>({
     name: "",
     userName: "",
     photo: "",
+    gradeLevel: 0,
     id: 0,
     createdAt: "",
     updatedAt: "",
@@ -69,50 +70,58 @@ function App(): JSX.Element {
   }, [user])
 
 
+  // Maripi request
+  useEffect((): void => {
+    try {
 
-    return (
-        <>
-            {user && <NavBar user={user} handleLogout={handleLogout} />}
-            <Routes>
-                <Route path="/level1" element={<Level1 />} />
-                <Route path="/" element={<Landing user={user} />} />
-                <Route path="/worlds" element={<Worlds user={user} />} />
-                <Route
-                    path="/signup"
-                    element={<Signup handleAuthEvt={handleAuthEvt} />}
-                />
-                <Route
-                    path="/login"
-                    element={<Login handleAuthEvt={handleAuthEvt} />}
-                />
-                <Route
-                    path="/profiles"
-                    element={
-                        <ProtectedRoute user={user}>
-                            <Profiles />
-                        </ProtectedRoute>
-                    }
-                />
-                <Route
-                    path="/profile"
-                    element={
-                        <ProtectedRoute user={user}>
-                            <ProfilePage user={user} profile={profile}/>
-                        </ProtectedRoute>
-                    }
-                />
-                <Route
-                    path="/change-password"
-                    element={
-                        <ProtectedRoute user={user}>
-                            <ChangePassword handleAuthEvt={handleAuthEvt} />
-                        </ProtectedRoute>
-                    }
-                />
-                <Route path="/completed" element={<Completed />} />
-            </Routes>
-        </>
-    );
+    } catch (error) {
+      console.log(error)
+    }
+  }, [user])
+
+  return (
+    <>
+      {user && <NavBar user={user} handleLogout={handleLogout} />}
+      <Routes>
+        <Route path="/level1" element={<Level1 />} />
+        <Route path="/" element={<Landing user={user} />} />
+        <Route path="/worlds" element={<Worlds user={user} profile={profile} />} />
+        <Route
+          path="/signup"
+          element={<Signup handleAuthEvt={handleAuthEvt} />}
+        />
+        <Route
+          path="/login"
+          element={<Login handleAuthEvt={handleAuthEvt} />}
+        />
+        <Route
+          path="/profiles"
+          element={
+            <ProtectedRoute user={user}>
+              <Profiles />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute user={user}>
+              <ProfilePage user={user} profile={profile} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/change-password"
+          element={
+            <ProtectedRoute user={user}>
+              <ChangePassword handleAuthEvt={handleAuthEvt} />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/completed" element={<Completed />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
