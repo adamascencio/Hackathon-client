@@ -25,6 +25,7 @@ import "./css/app.css";
 import calculate from "./utils/math";
 // types
 import { Profile, User } from "./types/models";
+import Completed from "./pages/Levels/Completed";
 
 function App(): JSX.Element {
     const navigate = useNavigate();
@@ -74,6 +75,7 @@ function App(): JSX.Element {
                     }
                 />
                 <Route path="/level1" element={<Level1 />} />
+                <Route path="/completed" element={<Completed />} />
             </Routes>
         </>
     );
