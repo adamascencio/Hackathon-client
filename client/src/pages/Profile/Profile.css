@@ -1,0 +1,93 @@
+/* profile page  */
+
+#profile-page {
+  display: flex;
+  flex-direction: column;
+}
+
+#username-and-avatar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 30px;
+}
+
+#username-and-avatar h2{
+  font-weight: bold;
+  font-size: x-large;
+}
+
+#username-and-avatar img {
+  width: 20%;
+  border-radius: 50px;
+}
+
+#xp-score {
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  justify-content: space-around;
+}
+
+#streak {
+  margin: 0 auto;
+  padding: 30px
+}
+
+#weekly-streak {
+  margin: 0 auto;
+  padding: 30px
+}
+
+#achievements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+#achievements h1 {
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+
+#challenges {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#challenges img {
+  width: 20%;
+}
+
+#challenges h1 {
+  font-weight: bold;
+  font-size: x-large;
+  padding: 30px;
+}
+
+#challenge-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media screen and (min-width: 575px) {
+
+  #profile-page {
+    width: 50%;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+
+}

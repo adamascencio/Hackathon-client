@@ -1,0 +1,119 @@
+.logo-gradient{
+    background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --== landing page animations ==-- */
+.fade-in {
+    animation: fade-in 5s 1 forwards;
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* landing page rocket slide-up */
+.fly-up-right {
+    animation: fly-up-right 1.5s 1 forwards;
+    animation-timing-function: ease;
+}
+
+@keyframes fly-up-right {
+    0% {
+        transform: translateY(500px) translateX(-500px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 1;
+    }
+}
+.slide-in {
+    animation: slide-in 2s 1 linear;
+    animation-timing-function: ease;
+}
+@keyframes slide-in {
+    0% {
+        transform: translateX(-500px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+/* .fade-in{
+    animation:fade-in 1.5s 1 forwards;
+} */
+/* animation helper classes */
+.delay-2 {
+    animation-delay: 2s;
+}
+.delay-3 {
+    animation-delay: 3s;
+}
+.delay-4 {
+    animation-delay: 4s;
+}
+/* take-off = rocket wiggles, then flies up and off screen */
+@keyframes take-off {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(1000px);
+    }
+}
+
+/* --== Level Complete Rocket Take-off ==-- */
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(3deg);
+    }
+    40% {
+        transform: rotate(-3deg);
+    }
+  60%{
+    transform: rotate(0deg);
+    }
+  85%{
+    transform:translateY(-500px);
+  }
+  100% {
+      transform:translateY(-500px);
+    }
+}
+
+.wiggle {
+    animation: wiggle 2s infinite linear;
+}
+
+.dissipate {
+  animation: dissipate 2s infinite linear;
+}
+.delay-1{
+  animation-delay:1s;
+}
+.delay-2{
+  animation-delay:2s;
+}
+
+@keyframes dissipate {
+  0% {
+    opacity: 0;
+  }
+  25%{
+    opacity: .5;
+  }
+  75% {
+    opacity: 1;
+  }
+  99%{
+    opacity:0;
+  }
+}
