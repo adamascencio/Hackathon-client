@@ -69,17 +69,7 @@ function App(): JSX.Element {
   }, [user])
 
 
-  //! Maripi request - once a level has been completed, trigger an update to progress to set levelCompleted === true
-  // useEffect((): void => {
-  //   const updateProgress = async (): Promise<void> => {
-  //     try {
-  //       await progressService.updateProgress(progressId, formData)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-  //   updateProgress()
-  // }, [user])
+ 
 
   return (
     <>
