@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 //types
 import { Profile } from "../../types/models";
-import { ProfileProps } from "../../types/props";
+import { ProfileProps } from "../../Types/props";
 
 // services
 import * as profileService from '../../Services/profileService'
