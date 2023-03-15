@@ -55,7 +55,7 @@ export const ProfileFeaturedGames = () => {
   export const ProfileMathByTopic = () => {
     return (
       <>
-    <div className='flex flex-col font-nunito'>
+    <div className='flex flex-col font-nunito text-lg font-bold'>
         <h1 className='text-lg pl-4 pt-1 font-bold font-nunito'>Math by topic</h1>
         <div className='flex justify-evenly text-lunarWhite'>
           <div className='relative'>
@@ -67,14 +67,14 @@ export const ProfileFeaturedGames = () => {
               })}
             </div>
             <div className="flex items-end justify-center w-[10rem] h-[10rem] border-[1px] bg-lime-300 rounded-tl-none rounded-2xl shadow-xl relative">
-              <h1 className='absolute z-20 bottom-3 text-lg'>Counting</h1>
+              <h1 className='absolute z-20 bottom-3'>Counting</h1>
               <div className='w-[100%] h-[3rem] bg-black opacity-20 overflow-hidden rounded-t-none rounded-2xl'></div>
             </div>
           </div>
           <div className='relative'>
             <img src={jupiter} alt='planet' className='absolute z-30 left-9 top-[20%]' />
             <div className="flex items-end justify-center w-[10rem] h-[10rem] border-[1px] bg-yellow-400 rounded-2xl shadow-xl relative">
-              <h1 className='absolute z-20 bottom-3 text-lg'>Addition</h1>
+              <h1 className='absolute z-20 bottom-3'>Addition</h1>
               <div className='w-[100%] h-[3rem] bg-black opacity-20 overflow-hidden rounded-t-none rounded-2xl'></div>
             </div>
           </div>
