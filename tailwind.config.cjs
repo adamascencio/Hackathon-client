@@ -19,6 +19,13 @@ module.exports = {
                 loginBtnLight: "rgb(67, 80, 142)",
                 completeTop: "0D6FCA",
                 completeBottom: "4B0384",
+                galacticPurple: "7C25EA",
+                orbitOrange: "FF9B05",
+                martianMauve: "DB7373",
+                beyondBlue: "0D6FCA",
+                lunarWhite: "FEF5EC",
+                valvetNight: "1E1E1E",
+                asteroidGray: "D9D9D9",
             },
             fontFamily: {
                 nunito: ["Nunito", "sans-serif"],

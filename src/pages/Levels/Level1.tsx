@@ -48,7 +48,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
     return (
         <div
             className={
-                "flex font-nunito flex-col justify-start sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1 " +
+                "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1 " +
                 (completed == 5 && "success-screen")
             }
         >
