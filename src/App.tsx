@@ -73,6 +73,8 @@ function App(): JSX.Element {
 
     return (
         <>
+        <div className="">
+
             {user && <NavBar user={user} handleLogout={handleLogout} />}
             <Routes>
                 <Route path="/level1" element={<Level1 />} />
@@ -113,6 +115,7 @@ function App(): JSX.Element {
                 />
                 <Route path="/completed" element={<Completed />} />
             </Routes>
+            </div>
         </>
     );
 }

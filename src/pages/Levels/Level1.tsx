@@ -44,19 +44,30 @@ const Level1 = (props: LevelProps): JSX.Element => {
             }, 1000);
         }
     };
-    useEffect(() => {
-        if (completed == 5) {
-            // FETCH TO CREATE THE LEVEL COMPLETED ?
-            console.log("pushing data");
-        }
-    }, [completed]);
-    if (completed == 5) {
+
+    return (
+
+//<div className={completed == 5 ? "bg-galaxy" : "bg-orbit-no-rings"}>
+     //   <div
+           // className={
+             //   "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1" +
+               // (completed == 5 && "success-screen")
+          //  }
+      //  >
+          //  {completed == 5 ? (
+  //  useEffect(() => {
+        //if (completed == 5) {
+          //  // FETCH TO CREATE THE LEVEL COMPLETED ?
+           // console.log("pushing data");
+     //   }
+ //   }, [completed]);
+  //  if (completed == 5) {
         return (
-            <div
-                className={
-                    "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1 success-screen"
-                }
-            >
+          //  <div
+             //   className={
+               //     "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1 success-screen"
+           //     }
+          //  >
                 <div className="text-3xl h-16 text-white">Stellar Work!</div>
 
                 {/* Rocket Holder */}
@@ -102,6 +113,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
                         </svg>
                     </div>
                 </NavLink>
+
 
                 {/* Rocket Holder */}
                 <div
@@ -186,9 +198,17 @@ const Level1 = (props: LevelProps): JSX.Element => {
                             })}
                         </div>
                     </>
-                </div>
+                ) : (
+                    <NavLink to="/completed">
+                        <button className="py-4 px-24 bg-gray-300 rounded rounded-[1.5rem] text-2xl text-white bg-[#DB7373]">
+                            Continue
+                        </button>
+                    </NavLink>
+                )}
             </div>
-        );
-    }
+        </div>
+        </div>
+    );
+
 };
 export default Level1;
