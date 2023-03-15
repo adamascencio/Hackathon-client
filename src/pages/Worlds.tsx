@@ -2,7 +2,6 @@ import React from 'react'
 import solarsystem from './solarsystem.png'
 import star from './Star.png'
 import moon from './Moon.png'
-import './world.css'
 
 import { User } from './../types/models'
 interface WorldsProps {

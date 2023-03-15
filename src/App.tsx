@@ -43,7 +43,7 @@ function App(): JSX.Element {
         setUser(authService.getUser());
     };
 
-  const profileId = user!.profile.id
+  const profileId = user?.profile.id
 
   const [profile, setProfile] = useState<Profile>({
     name: "",
