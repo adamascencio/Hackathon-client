@@ -6,6 +6,7 @@
 
 export interface Profile {
     name: string;
+    userName: string;
     photo?: string;
     id: number;
     createdAt: string;

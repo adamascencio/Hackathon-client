@@ -8,7 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import TestComponent from "./Components/TestComponent";
+import ProfilePage from './pages/Profile/Profile'
 
 // components
 import NavBar from './Components/NavBar/NavBar'
