@@ -24,7 +24,7 @@ const NavBar = (props: NavBarProps): JSX.Element => {
   <div className='fixed flex bottom-0 gap-16 p-4 text-3xl border-gray-400 bg-gray-300 border-[1px] mb-8 rounded-[100px] shadow-2xl'>
       {user ?
             <>
-          <NavLink to="/profiles"><AiFillHome/></NavLink>
+          <NavLink to="/"><AiFillHome/></NavLink>
           <NavLink to="/profiles"><CgMathDivide/></NavLink>
           <NavLink to="/profiles"><TbSwords/></NavLink>
           <NavLink to="/profiles"><BsFillPersonFill/></NavLink>
