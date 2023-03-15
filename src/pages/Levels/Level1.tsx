@@ -76,7 +76,9 @@ const Level1 = (props: LevelProps): JSX.Element => {
             )}
             {/* Rocket Holder */}
             <div className="relative w-full h-[24rem] flex flex-col items-center justify-center">
+                <div className="wiggle">
                 <Rocket />
+                </div>
                 <div className="flex flex-col-reverse items-center justify-center z-10 absolute top gap-8">
                     {completed !== 5 &&
                         rocketBox.map((e, i) => {
