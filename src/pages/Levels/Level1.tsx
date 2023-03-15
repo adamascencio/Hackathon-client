@@ -75,8 +75,12 @@ const Level1 = (props: LevelProps): JSX.Element => {
                 </NavLink>
             )}
             {/* Rocket Holder */}
-            <div className="relative w-full h-[24rem] flex flex-col items-center justify-center">
-                <div className="wiggle">
+            <div
+                className={
+                    "relative w-full h-[24rem] flex flex-col items-center justify-center " +
+                    (completed == 5 && "animate-bounce")
+                }
+            >
                 <Rocket />
                 </div>
                 <div className="flex flex-col-reverse items-center justify-center z-10 absolute top gap-8">
@@ -159,7 +163,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
                     </>
                 ) : (
                     <NavLink to="/completed">
-                        <button className="py-4 px-24 bg-gray-300 rounded rounded-[1.5rem] text-2xl text-white bg-[#DB7373]">
+                        <button className="h-12 w-64 rounded rounded-[1rem] text-xl text-white bg-beyondBlue my-2">
                             Continue
                         </button>
                     </NavLink>
