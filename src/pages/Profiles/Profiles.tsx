@@ -28,7 +28,7 @@ const Profiles = (): JSX.Element => {
   return (
     <>     
      <div className="flex">
-      <div className='text-[35px] font-bold mt-10 ml-2 font-nunito'>Welcome back!</div>
+      <div className='text-[35px] mt-10 ml-2 font-nunito'>Welcome back!</div>
       <img src="" alt="" className='rounded-[50%] border-black border-[1px] w-20 h-20 ml-auto m-4'></img>
     </div>
 

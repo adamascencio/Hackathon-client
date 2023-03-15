@@ -21,6 +21,13 @@ module.exports = {
         fontFamily: {
           nunito: ['Nunito', "sans-serif"]
         },
+        fontWeight: {
+          thin: '300',
+          boldish: '400',
+          bold: '600',
+          bolder: '700',
+          boldest: '1000'
+        },
         translate: {
           xInput: "translate(12px) scale(1)",
           yInput: "translate(16px) scale(1)"

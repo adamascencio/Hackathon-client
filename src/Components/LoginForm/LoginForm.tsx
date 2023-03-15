@@ -4,9 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { FaLock } from 'react-icons/fa';
 
-// services
-import styles from './LoginForm.module.css'
-
+//imgs
+import rocket from './rocket1.svg'
 // stylesheets
 import * as authService from '../../Services/authService'
 
@@ -17,6 +16,7 @@ import { handleErrMsg } from '../../Types/validators'
 
 const LoginForm = (props: AuthFormProps): JSX.Element => {
   const { updateMessage, handleAuthEvt } = props
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState<LoginFormData>({
@@ -32,12 +32,15 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
     evt.preventDefault()
     try {
+      setIsSubmitted(true)
       await authService.login(formData)
       handleAuthEvt()
       navigate('/')
+      setIsSubmitted(false)
     } catch (err) {
       console.log(err)
       handleErrMsg(err, updateMessage)
+      setIsSubmitted(false)
     }
   }
 
@@ -48,54 +51,32 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
   }
 
   return (
-    <form
-      autoComplete="off"
-      onSubmit={handleSubmit}
-      className='flex flex-col items-center gap-10'
-    >
-      <div className='flex flex-col gap-2'>
-        <div className="relative inline-flex items-center">
-          <input
-            type="text"
-            id="email"
-            value={formData.email}
-            name="email"
-            onChange={handleChange}
-            className='rounded-lg px-3 py-2 opacity-50 text-black font-bold text-lg'
-          />
-          {formData.email === '' && 
-          <div className="absolute left-7 top-2 text-lpBg font-light flex items-center gap-2">
-            <BsFillPersonFill />
-            <label htmlFor='email'>email</label>
-          </div>
-          }
-        </div>
-        <div className="relative">
-          <input
-            type="password"
-            id="password"
-            value={formData.password}
-            name="password"
-            onChange={handleChange}
-            className='rounded-lg px-3 py-2 opacity-50 text-black font-bold text-lg'
-          />
-          {formData.password === '' && 
-          <div className="absolute left-7 top-2 text-lpBg font-light flex items-center gap-2">
-            <FaLock />
-            <label htmlFor='password'>Password</label>
-          </div>
-          }
-        </div>
-      </div>
-      <div className='grid gap-4 w-5/6 max-w-xs'>
-        <button disabled={isFormInvalid()} className='rounded-full bg-gradient-to-r from-loginBtnDark to-loginBtnLight py-2 border-2 border-btnBorder outline outline-btnBorder outline-offset-3 shadow-md'>
-          LOGIN
-        </button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
-      </div>
-    </form>
+    <>
+<div className='w-screen flex flex-col items-center justify-center h-screen overflow-hidden'>
+<img src={rocket} className="w-60 rotate-45 z-[-1]" />
+<form  className="border-gray-500 flex flex-col gap-5 border-[1px] shadow-xl rounded-2xl w-[90%] h-[50%] p-5 mb-40" autoComplete="off" onSubmit={handleSubmit}>
+<h1 className='text-2xl text-center font-nunito font-boldest'>Welcome to Mathscots!</h1>
+
+<div className="flex flex-col h-20">
+  <label htmlFor="email" className="font-nunito text-xl" >Email</label>
+  <input type="text" className="border-gray-400 border-[1px] rounded-lg h-[50%]" value={email} name="email"onChange={handleChange}/>
+</div>
+
+<div className="flex flex-col h-20">
+  <label htmlFor="password" className="font-nunito text-xl">Password</label>
+  <input className="border-gray-400 border-[1px] rounded-lg h-[50%]" type="password" value={password} name="password" onChange={handleChange}/>
+</div>
+     
+
+<div className='flex'>
+  <Link className='mr-auto border-gray-400 shadow-md border-[1px] rounded-xl p-2 font-nunito bg-gray-300 hover:bg-gray-400' to="/"><button>Cancel</button></Link>
+  <Link className=' border-gray-400 shadow-md border-[1px] rounded-xl p-2 font-nunito bg-blue-400 hover:bg-blue-500' to="/login"><button>Login</button></Link>
+  <button className=' border-gray-400 shadow-md ml-1 cursor-pointer border-[1px] rounded-xl p-2 font-nunito bg-blue-400 hover:bg-blue-500' disabled={isFormInvalid() || isSubmitted}>{!isSubmitted ? "Sign Up" : "🚀 Sending..."}</button>
+  
+</div>
+</form>
+</div>
+</>
   )
 }
 
