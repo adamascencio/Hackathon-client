@@ -82,7 +82,7 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
           {formData.password === '' && 
           <div className="absolute left-7 top-2 text-lpBg font-light flex items-center gap-2">
             <FaLock />
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>password</label>
           </div>
           }
         </div>
