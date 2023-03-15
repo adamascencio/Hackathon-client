@@ -19,6 +19,7 @@ import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 
 // services
 import * as authService from "./Services/authService";
+import * as profileService from '../src/Services/profileService'
 
 // stylesheets
 import "./css/app.css";
@@ -42,6 +43,33 @@ function App(): JSX.Element {
     const handleAuthEvt = (): void => {
         setUser(authService.getUser());
     };
+
+  const profileId = user?.profile.id
+
+  const [profile, setProfile] = useState<Profile>({
+    name: "",
+    userName: "",
+    photo: "",
+    id: 0,
+    createdAt: "",
+    updatedAt: "",
+  })
+
+  useEffect((): void => {
+    const fetchProfile = async (): Promise<void> => {
+      try {
+        console.log("profileId", profileId)
+        const profileData: Profile = await profileService.getProfile(profileId)
+        console.log("profileData", profileData)
+        setProfile(profileData)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchProfile()
+  }, [user])
+
+
 
     return (
         <>
@@ -71,7 +99,7 @@ function App(): JSX.Element {
                     path="/profile"
                     element={
                         <ProtectedRoute user={user}>
-                            <ProfilePage user={user} />
+                            <ProfilePage user={user} profile={profile}/>
                         </ProtectedRoute>
                     }
                 />
