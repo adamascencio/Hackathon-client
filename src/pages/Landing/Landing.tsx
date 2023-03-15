@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom'
 
 // types
 import { User } from '../../types/models'
+import Profiles from '../Profiles/Profiles';
+import rocketY from './landingrocket.png'
 
 interface LandingProps {
   user: User | null;
@@ -11,16 +13,20 @@ const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
 
   return (
-    <main className='flex place-content-center text-center flex-col h-screen bg-lpBg text-white px-8 gap-8'>
-      <h1 className='text-4xl'>Math Masters</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    <>
+    {user? < Profiles />: 
+    <div className='flex flex-col items-center bg-white mt-8 gap-6'>
+      <img src={rocketY} className="w-64" alt="" />
+      <h1 className='text-4xl font-nunito font-boldest'>Addventures</h1>
+      <p className='text-2xl font-nunito font-bolder mb-7'>Transforming math <br />into an adventure.</p>
       <div className='flex justify-center'>
-        <div className='grid gap-4 w-5/6 max-w-md'>
-          <NavLink to="/login" className='rounded-full bg-gradient-to-r from-loginBtnDark to-loginBtnLight py-2 border-2 border-btnBorder outline outline-btnBorder outline-offset-3 shadow-md'>LOGIN</NavLink>
-          <NavLink to="/signup" className='rounded-full bg-transparent py-2 border-2 border-btnBorder'>SIGN UP</NavLink>
+        <div className='flex flex-col w-[80vw] gap-4 text-center'>
+          <NavLink to="/login" className='rounded-xl bg-blue-500 h-15 text-white font-bold py-4'>Login</NavLink>
+          <NavLink to="/signup"  className='rounded-xl bg-gray-300 h-15 text-black py-4 font-bold'>Create a Profile</NavLink>
         </div>
       </div>
-    </main>
+    </div>
+  }</>
   )
 }
 

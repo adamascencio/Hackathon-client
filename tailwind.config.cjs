@@ -37,10 +37,15 @@ module.exports = {
             xl: "1700px",
         },
         fontWeight: {
-            thin: "300",
-            boldish: "400",
-            bold: "600",
-            bolder: "700",
+          thin: '300',
+          boldish: '400',
+          bold: '600',
+          bolder: '700',
+          boldest: '1000'
+        },
+        translate: {
+          xInput: "translate(12px) scale(1)",
+          yInput: "translate(16px) scale(1)"
         },
     },
     plugins: [],
