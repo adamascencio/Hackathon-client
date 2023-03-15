@@ -70,8 +70,8 @@ const LoginForm = (props: AuthFormProps): JSX.Element => {
 
 <div className='flex'>
   <Link className='mr-auto border-gray-400 shadow-md border-[1px] rounded-xl p-2 font-nunito bg-gray-300 hover:bg-gray-400' to="/"><button>Cancel</button></Link>
-  <Link className=' border-gray-400 shadow-md border-[1px] rounded-xl p-2 font-nunito bg-blue-400 hover:bg-blue-500' to="/login"><button>Login</button></Link>
-  <button className=' border-gray-400 shadow-md ml-1 cursor-pointer border-[1px] rounded-xl p-2 font-nunito bg-blue-400 hover:bg-blue-500' disabled={isFormInvalid() || isSubmitted}>{!isSubmitted ? "Sign Up" : "🚀 Sending..."}</button>
+  <Link className=' border-gray-400 shadow-md border-[1px] rounded-xl p-2 font-nunito bg-blue-400 hover:bg-blue-500' to="/signup"><button>Signup</button></Link>
+  <button className=' border-gray-400 shadow-md ml-1 cursor-pointer border-[1px] rounded-xl p-2 font-nunito bg-blue-400 hover:bg-blue-500' disabled={isFormInvalid() || isSubmitted}>{!isSubmitted ? "Login" : "🚀 Sending..."}</button>
   
 </div>
 </form>
