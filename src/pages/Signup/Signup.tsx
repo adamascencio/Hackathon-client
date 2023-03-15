@@ -15,8 +15,7 @@ const Signup = (props: SignupProps): JSX.Element => {
   const updateMessage = (msg: string): void => setMessage(msg)
 
   return (
-    <main>
-      <h1>Sign Up</h1>
+    <main className='flex items-center justify-center w-screen h-screen'>
       <SignupForm {...props} updateMessage={updateMessage} />
     </main>
   )

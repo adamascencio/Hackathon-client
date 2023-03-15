@@ -47,7 +47,6 @@ function App(): JSX.Element {
       {user && <NavBar user={user} handleLogout={handleLogout} />}
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route path="/test" element={<TestComponent/>} />
         <Route path="/signup" element={<Signup handleAuthEvt={handleAuthEvt} />}/>
         <Route path="/login" element={<Login handleAuthEvt={handleAuthEvt} />}/>
         <Route path="/profiles" element={<ProtectedRoute user={user}><Profiles /></ProtectedRoute>}/>
