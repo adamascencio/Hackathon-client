@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 
 // types
 import { User } from '../../types/models'
+import Profiles from '../Profiles/Profiles';
 import rocketY from './landingrocket.png'
 
 interface LandingProps {
@@ -12,6 +13,8 @@ const Landing = (props: LandingProps): JSX.Element => {
   const { user } = props
 
   return (
+    <>
+    {user? < Profiles />: 
     <div className='flex flex-col items-center bg-white mt-8 gap-6'>
       <img src={rocketY} className="w-64" alt="" />
       <h1 className='text-4xl font-nunito font-boldest'>Addventures</h1>
@@ -23,6 +26,7 @@ const Landing = (props: LandingProps): JSX.Element => {
         </div>
       </div>
     </div>
+  }</>
   )
 }
 
