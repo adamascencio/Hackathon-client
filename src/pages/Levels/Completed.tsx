@@ -176,18 +176,24 @@ const Completed = (props: CompletedProps): JSX.Element => {
         </svg>
     );
     return (
-        <>
-            <div className="h-[100vh] absolute w-[100vw] pointer-events-none overflow-hidden">
-                {dots}
-            </div>
-            <div className="flex h-[100vh] justify-center items-center flex-col">
-                <div className="text-2xl font-bold mb-4">Level 1</div>
-                <div className="h-96 w-56 bg-[#DB737380] my-6 rounded-full flex justify-between flex-col items-center">
-                    {/* Stars Container */}
-                    <div className="stars flex justify-between">
-                        <div className="w-16 h-16 star1">{star}</div>
-                        <div className="w-[4.5rem] h-[4.5rem] star2">
-                            {star}
+        <div className="flex h-[100vh] justify-center items-center flex-col bg-orbit-no-rings">
+            <div className="text-2xl font-bold my-6">Level 1</div>
+            <div className="h-96 w-56 bg-[#DB737380] my-6 rounded-full flex justify-between flex-col items-center">
+                {/* Stars Container */}
+                <div className="stars flex justify-between">
+                    <div className="w-16 h-16 star1">{star}</div>
+                    <div className="w-[4.5rem] h-[4.5rem] star2">{star}</div>
+                    <div className="w-16 h-16 star3">{star}</div>
+                </div>
+                <div className="w-32 h-32 rounded rounded-full bg-blue-100"></div>
+                <div className="w-40 h-10 flex flex-grow">
+                    <div className="bg-[#B46DCB] w-40 h-20 rounded-[2rem] mt-8 flex flex-col justify-center items-center gap-1">
+                        <div className="text-white font-boldish flex flex-row items-center">
+                            <div className="w-6 h-6">{star}</div>
+                            <div className="w-20 h-6 flex justify-center items-center">
+                                +3 Stars
+                            </div>
+
                         </div>
                         <div className="w-16 h-16 star3">{star}</div>
                     </div>

@@ -1,5 +1,5 @@
-.logo-gradient{
-    background: linear-gradient(to right, #ff8a00 0%, #dd4c4f 100%);
+.logo-gradient {
+    background: linear-gradient(to right, #0085FF 0%, #9747FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -78,14 +78,14 @@
     40% {
         transform: rotate(-3deg);
     }
-  60%{
-    transform: rotate(0deg);
+    60% {
+        transform: rotate(0deg);
     }
-  85%{
-    transform:translateY(-500px);
-  }
-  100% {
-      transform:translateY(-500px);
+    85% {
+        transform: translateY(-500px);
+    }
+    100% {
+        transform: translateY(-500px);
     }
 }
 
@@ -94,26 +94,43 @@
 }
 
 .dissipate {
-  animation: dissipate 2s infinite linear;
+    animation: dissipate 2s infinite linear;
 }
-.delay-1{
-  animation-delay:1s;
+.delay-1 {
+    animation-delay: 1s;
 }
-.delay-2{
-  animation-delay:2s;
+.delay-2 {
+    animation-delay: 2s;
 }
 
 @keyframes dissipate {
-  0% {
-    opacity: 0;
-  }
-  25%{
-    opacity: .5;
-  }
-  75% {
-    opacity: 1;
-  }
-  99%{
-    opacity:0;
-  }
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    75% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+}
+
+/* --== Orbit Background ==-- */
+.bg-orbit {
+    background-image: url("/src/assets/BG-orbit-1.svg");
+    background-position: stretch;
+    background-size: fill;
+}
+.bg-orbit-no-rings {
+    background-image: url("/src/assets/BG-orbit-NoRings.svg");
+    background-position: stretch;
+    background-size: fill;
+}
+.bg-galaxy {
+    background-image: url("/src/assets/BG-galaxy.svg");
+    background-position: stretch;
+    background-size: fill;
 }

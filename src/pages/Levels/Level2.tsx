@@ -10,8 +10,14 @@ interface LevelProps {
 const Level2 = (props: LevelProps): JSX.Element => {
     // const { user } = props;
     const [completed, setCompleted] = useState(false);
+    const [scenario, setScenario] = useState({
+        created: false,
+        nMoons: 0,
+        moons: [],
+        buttons: [],
+        correct: "",
+    });
 
-    const [buttons, setButtons] = useState([1, 2, 3, 4]);
     const [wrong, setWrong] = useState("");
     // const planet = ":)";
     const planet = (
@@ -45,8 +51,8 @@ const Level2 = (props: LevelProps): JSX.Element => {
     );
     const moon = (
         <svg
-            width="58"
-            height="58"
+            width="3rem"
+            height="3rem"
             viewBox="0 0 58 58"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -75,18 +81,81 @@ const Level2 = (props: LevelProps): JSX.Element => {
         </svg>
     );
     // const moon = ":)";
-    const handleButton = (e: any) => {};
+    const allMoons = {
+        0: (
+            <div key="0" className="moon absolute top-3 right-24">
+                {moon}
+            </div>
+        ),
+        3: (
+            <div key="3" className="moon absolute top-8 right-5">
+                {moon}
+            </div>
+        ),
+        2: (
+            <div key="2" className="moon absolute bottom-16 right-2">
+                {moon}
+            </div>
+        ),
+        1: (
+            <div key="1" className="moon absolute bottom-10 left-6">
+                {moon}
+            </div>
+        ),
+    };
+    const createScenario = () => {
+        const nMoons = Math.floor(Math.random() * 4) + 1;
+        let numbers = [1, 2, 3, 4];
+        let sliced = numbers.slice(0, nMoons);
+        let moons = [];
+        let shuffledButtons = [];
+        console.log("sliced array  ", sliced);
+        for (let i = 0; i < 4; i++) {
+            let randomIndex = Math.floor(Math.random() * numbers.length);
+            shuffledButtons.push(numbers[randomIndex]);
+            numbers.splice(randomIndex, 1);
+            if (i < nMoons) {
+                console.log(i, "");
+                moons.push(allMoons[i]);
+            }
+        }
+        console.log(shuffledButtons);
+        console.log(moons);
+        console.log(nMoons);
+        const generated = {
+            created: true,
+            nMoons: nMoons,
+            moons: moons,
+            buttons: shuffledButtons,
+            correct: nMoons.toString(),
+        };
+        setScenario(generated);
+    };
+    useEffect(() => {
+        createScenario();
+    }, []);
+    const handleButton = (e: any) => {
+        console.log(e.target.id);
+        if (e.target.id == scenario.correct) {
+            setCompleted(true);
+        } else {
+            setWrong(e.target.id);
+            setTimeout(() => {
+                setWrong("");
+            }, 2000);
+        }
+    };
 
     const images = (
         <div
             className={
-                "relative w-72 border-black border-2 h-[24rem] flex flex-col items-center justify-center"
+                "relative w-72 h-[24rem] flex flex-col items-center justify-center"
             }
         >
             <div className="h-full flex justify-center items-center">
                 <svg
-                    width="12rem"
-                    height="12rem"
+                    width="14rem"
+                    height="14rem"
                     viewBox="0 0 277 277"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -94,12 +163,8 @@ const Level2 = (props: LevelProps): JSX.Element => {
                 >
                     {planet}
                 </svg>
+                {scenario.created && scenario.moons.map((moon) => moon)}
             </div>
-            <div className="moon absolute top-1 left-5">{moon}</div>
-            <div className="moon absolute bottom-1 left-5">{moon}</div>
-            <div className="moon absolute bottom-1 right-5">{moon}</div>
-            <div className="moon absolute top-1 right-5">{moon}</div>
-            {/* <div className="moon absolute top-1 left-5">{moon}</div> */}
         </div>
     );
     useEffect(() => {
@@ -119,8 +184,7 @@ const Level2 = (props: LevelProps): JSX.Element => {
 
                 {/* Planet Holder */}
                 {/* {images} */}
-                {planet}
-                {moon}
+                {images}
                 {/* Button Options */}
                 <div className="flex gap-6 flex-col justify-center">
                     <NavLink to="/completed">
@@ -167,15 +231,22 @@ const Level2 = (props: LevelProps): JSX.Element => {
                             {" "}
                             How many moons are there?
                         </div>
-                        <div className="flex gap-3 justify-center">
-                            {buttons.map((button) => (
-                                <button
-                                    className="rounded h-14 w-10 text-xl font-bolder bg-gray-100"
-                                    onClick={handleButton}
-                                >
-                                    {button}
-                                </button>
-                            ))}
+                        <div className="flex gap-6 justify-center">
+                            {scenario.created &&
+                                scenario.buttons.map((button) => (
+                                    <button
+                                        className={
+                                            "rounded h-14 w-10 text-2xl font-bolder " +
+                                            (button == wrong
+                                                ? " animate-bounce bg-red-100"
+                                                : " bg-asteroidGray")
+                                        }
+                                        onClick={handleButton}
+                                        id={button}
+                                    >
+                                        {button}
+                                    </button>
+                                ))}
                         </div>
                     </>
                 </div>

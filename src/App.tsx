@@ -20,6 +20,7 @@ import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 // services
 import * as authService from "./Services/authService";
 import * as profileService from '../src/Services/profileService'
+import * as progressService from '../src/Services/progressService'
 
 // stylesheets
 import "./css/app.css";
@@ -31,25 +32,26 @@ import { Profile, User } from "./types/models";
 import Completed from "./pages/Levels/Completed";
 
 function App(): JSX.Element {
-    const [user, setUser] = useState<User | null>(authService.getUser());
-    const navigate = useNavigate();
+  const [user, setUser] = useState<User | null>(authService.getUser());
+  const navigate = useNavigate();
 
-    const handleLogout = (): void => {
-        authService.logout();
-        setUser(null);
-        navigate("/");
-    };
+  const handleLogout = (): void => {
+    authService.logout();
+    setUser(null);
+    navigate("/");
+  };
 
-    const handleAuthEvt = (): void => {
-        setUser(authService.getUser());
-    };
+  const handleAuthEvt = (): void => {
+    setUser(authService.getUser());
+  };
 
-  const profileId = user?.profile.id
+  const profileId = user!.profile.id
 
   const [profile, setProfile] = useState<Profile>({
     name: "",
     userName: "",
     photo: "",
+    gradeLevel: 0,
     id: 0,
     createdAt: "",
     updatedAt: "",
@@ -58,9 +60,7 @@ function App(): JSX.Element {
   useEffect((): void => {
     const fetchProfile = async (): Promise<void> => {
       try {
-        console.log("profileId", profileId)
         const profileData: Profile = await profileService.getProfile(profileId)
-        console.log("profileData", profileData)
         setProfile(profileData)
       } catch (error) {
         console.log(error)
@@ -70,9 +70,13 @@ function App(): JSX.Element {
   }, [user])
 
 
+ 
+
 
     return (
         <>
+        <div className="">
+
             {user && <NavBar user={user} handleLogout={handleLogout} />}
             <Routes>
                 <Route path="/level1" element={<Level1 />} />
@@ -113,6 +117,7 @@ function App(): JSX.Element {
                 />
                 <Route path="/completed" element={<Completed />} />
             </Routes>
+            </div>
         </>
     );
 }
