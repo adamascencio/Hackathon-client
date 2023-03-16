@@ -65,7 +65,7 @@ const Completed = (props: CompletedProps): JSX.Element => {
 
     return (
         <>
-            <div className="flex h-[100vh] justify-center items-center flex-col">
+            <div className="flex h-[100vh] justify-center items-center flex-col bg-orbit-no-rings">
                 <div className="text-2xl font-bold mb-4">Level 1</div>
                 <div className="h-96 w-56 bg-[#DB737380] my-6 rounded-full flex justify-between flex-col items-center">
                     {/* Stars Container */}
