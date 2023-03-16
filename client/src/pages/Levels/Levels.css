@@ -10,3 +10,8 @@
 .star3 {
     transform: translate(-0rem, 0rem) rotate(15deg);
 }
+
+#success-screen {
+    background: url('./vecta.png');
+    background-size: cover    
+}
