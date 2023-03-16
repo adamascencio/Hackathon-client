@@ -125,7 +125,7 @@ const Level2 = (props: LevelProps): JSX.Element => {
         return (
             <div
                 className={
-                    "flex font-nunito flex-col justify-between items-center py-12 sm:justify-center md:pt-0 h-[100vh] w-full gap-1 success-screen"
+                    "flex font-nunito flex-col justify-between items-center py-12 sm:justify-center md:pt-0 h-[100vh] w-full gap-1 success-screen bg-galaxy"
                 }
             >
                 <div className="text-3xl h-16 text-white">Stellar Work!</div>
