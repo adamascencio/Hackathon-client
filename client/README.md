@@ -2,8 +2,9 @@
 
 Welcome to Addventures!
 
-This project was part of the General Assembly Spring 2023 Hackathon.
+Addventures is a gamified math learning application for kids.
 
+This project was created as part of the [General Assembly](https://generalassemb.ly) Spring 2023 Hackathon. The theme was "Gamification".
 
 ## Table of Contents
 
@@ -46,13 +47,9 @@ To side-step that, you can navigate directly to pages in the location bar of you
     `'/worlds'`
     This method may cause some assets (images) to not load property.
 
-## Contributing
-
-Guidelines for contributing to the project, including how to submit pull requests and what types of contributions are welcome.
-
 ## License
 
-GNU General Public License (GPL)
+GNU General Public License (GPL).
 
 ## Acknowledgements
 
@@ -72,18 +69,6 @@ Our team was comprised of 3 designers and 5 developers from General Assembly's g
 [Shannon Desmangles](shdesmangles@gmail.com)
 [Tanner Eschmann](eschmanntanner@gmail.com)
 
-## References
-
-Any references that were used in the project. 
-
-## Troubleshooting
-
-A section for troubleshooting any issues that might arise when running the project. 
-
-## FAQ
-
-A section with frequently asked questions about the project. 
-
 ## Roadmap
 
-Plans for future development of the project.
+There are always more ideas than time! Perhaps more things to come.
