@@ -17,7 +17,10 @@ const ProfilePage = (props: any) => {
   return (
     <div id="profile-page">
       <div id="username-and-avatar">
-        <h2>{profile.name}</h2>
+        <div id="user-and-level">
+          <h2>{profile.name}</h2>
+          <h3>Level 2</h3>
+        </div>
         <img src={profile.photo} alt="" />
       </div>
       <div id="xp-score">
@@ -33,14 +36,6 @@ const ProfilePage = (props: any) => {
       <div id="achievements">
         <h1>Achievements</h1>
         <img src="/achievements.png" alt="" />
-      </div>
-      <div id="challenges">
-        <h1>Challenges</h1>
-        <div id="challenge-cards">
-          <img src="/challenge-demo.png" alt="" />
-          <img src="/challenge-demo.png" alt="" />
-          <img src="/challenge-demo.png" alt="" />
-        </div>
       </div>
     </div>
   );

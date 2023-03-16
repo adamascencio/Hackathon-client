@@ -24,7 +24,7 @@ const Worlds = (props: any): JSX.Element => {
   //   // exercisesComplete: "",
   // })
 
-  //! once start button is implemented we'll set an onClick for that element to trigger the below function
+  // // ! once start button is implemented we'll set an onClick for that element to trigger the below function
   // const handleLevelStart = async (evt: React.FormEvent): Promise<void> => {
   //   evt.preventDefault()
   //   try {
