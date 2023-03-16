@@ -16,6 +16,18 @@
         opacity: 1;
     }
 }
+
+.fade-in-modal {
+    animation: fade-in 1s forwards;
+}
+@keyframes fade-in-modal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.75;
+    }
+}
 /* landing page rocket slide-up */
 .fly-up-right {
     animation: fly-up-right 1.5s 1 forwards;

@@ -12,6 +12,7 @@ import ProfilePage from "./pages/Profile/Profile";
 import Worlds from "./pages/Worlds";
 import Level1 from "./pages/Levels/Level1";
 import Level2 from "./pages/Levels/Level2";
+import Level3 from "./pages/Levels/Level3";
 
 // components
 import NavBar from "./Components/NavBar/NavBar";
@@ -78,6 +79,7 @@ function App(): JSX.Element {
             <Routes>
                 <Route path="/level1" element={<Level1 />} />
                 <Route path="/level2" element={<Level2 />} />
+                <Route path="/level3" element={<Level3 />} />
                 <Route path="/" element={<Landing user={user} />} />
                 <Route path="/worlds" element={<Worlds user={user} />} />
                 <Route path="/signup" element={<Signup handleAuthEvt={handleAuthEvt} />}/>
