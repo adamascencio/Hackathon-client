@@ -70,11 +70,11 @@ const Completed = (props: CompletedProps): JSX.Element => {
                 <div className="h-96 w-56 bg-[#DB737380] my-6 rounded-full flex justify-between flex-col items-center">
                     {/* Stars Container */}
                     <div className="stars flex justify-between">
-                        <div className="w-16 h-16 star1">{star}</div>
-                        <div className="w-[4.5rem] h-[4.5rem] star2">
+                        <div className="w-16 h-16 star1 star1-twist-in">{star}</div>
+                        <div className="w-[4.5rem] h-[4.5rem] star2 star2-slide-up-in">
                             {star}
                         </div>
-                        <div className="w-16 h-16 star3">{star}</div>
+                        <div className="w-16 h-16 star3 star3-twist-in">{star}</div>
                     </div>
                     <div className="w-32 h-32 rounded-full bg-blue-100"></div>
                     <div className="w-40 h-10 flex flex-grow">

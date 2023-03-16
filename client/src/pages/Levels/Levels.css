@@ -12,6 +12,51 @@
 }
 
 #success-screen {
-    background: url('./vecta.png');
-    background-size: cover    
+    background: url("./vecta.png");
+    background-size: cover;
+}
+.star1-twist-in {
+    animation: star1-twist-in 2s 1 forwards;
+}
+@keyframes star1-twist-in {
+    0% {
+        transform: rotate(15deg);
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-15deg);
+    }
+}
+.star2-slide-up-in {
+    animation: star2-slide-up-in 2s 1 forwards;
+}
+@keyframes star2-slide-up-in {
+    0% {
+        opacity: 0;
+        transform: translate(0rem, 0.5rem);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0rem, -2rem);
+    }
+}
+.star3-twist-in {
+    animation: star3-twist-in 2s 1 forwards;
+}
+@keyframes star3-twist-in {
+    0% {
+        transform: rotate(-15deg);
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(15deg);
+    }
 }
