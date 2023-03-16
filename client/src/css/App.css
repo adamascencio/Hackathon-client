@@ -132,17 +132,17 @@
 
 /* --== Orbit Background ==-- */
 .bg-orbit {
-    background-image: url("/src/assets/BG-orbit-1.svg");
-    background-position: stretch;
-    background-size: fill;
+    background-image: url("/assets/BG-orbit-1.svg");
+    background-position: center;
+    background-size: cover;
 }
 .bg-orbit-no-rings {
-    background-image: url("/src/assets/BG-orbit-NoRings.svg");
-    background-position: stretch;
-    background-size: fill;
+    background-image: url("/assets/BG-orbit-NoRings.svg");
+    background-position: center;
+    background-size: cover;
 }
 .bg-galaxy {
-    background-image: url("/src/assets/BG-galaxy.svg");
-    background-position: stretch;
-    background-size: fill;
+    background-image: url("/assets/BG-galaxy.svg");
+    background-position: center;
+    background-size: cover;
 }

@@ -65,7 +65,7 @@ useEffect(() => {
   return (
     <>
     {succesScreen == true?
-    <div className="absolute w-screen h-screen flex flex-col items-center z-10" id='success-screen'>
+    <div className="absolute w-screen h-screen flex flex-col items-center z-10 bg-galaxy" id='success-screen'>
         <div className='text-white font-boldest mb-[-4rem] mt-8 text-[3rem]'>Stellar Work!</div>
         <img className="mt-32 mx-auto" src={meteorgroup} />
         <img className="mx-auto" src={chill}/>
