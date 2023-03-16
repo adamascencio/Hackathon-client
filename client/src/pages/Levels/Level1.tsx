@@ -4,14 +4,19 @@ import { User } from "../../types/models";
 import "./Levels.css";
 
 import Rocket from "./Rocket";
-interface LevelProps {
-    // user: User | null;
-}
+// interface LevelProps {
+//     level: number;
+// }
 
-const Level1 = (props: LevelProps): JSX.Element => {
-    // const { user } = props;
+const Level1 = (props: any): JSX.Element => {
+    const [round, setRound] = useState(1);
     const [completed, setCompleted] = useState(0);
-    const [scenario, setScenario] = useState({});
+    const [scenario, setScenario] = useState({
+        created: false,
+        rocketBox: [],
+        buttons: [],
+        completed: 0,
+    });
     const [rocketBox, setRocketBox] = useState(["", "", "", "", ""]);
     const [buttons, setButtons] = useState({
         "1": false,
@@ -20,7 +25,6 @@ const Level1 = (props: LevelProps): JSX.Element => {
         "4": false,
         "5": false,
     });
-    const numOrd = [3, 1, 5, 2, 4];
     const [active, setActive] = useState("");
     const [wrong, setWrong] = useState("");
 
@@ -45,17 +49,61 @@ const Level1 = (props: LevelProps): JSX.Element => {
             }, 1000);
         }
     };
+    const createScenario = (newRound) => {
+        let rocketBox: any = [];
+        let numbers: any = [];
+        let shuffledButtons: any = [];
+        for (let i = 1; i < round + 3; i++) {
+            rocketBox.push("");
+            numbers.push(`${i}`);
+        }
+
+        for (let i = 1; i < newRound + 3; i++) {
+            let randomIndex = Math.floor(Math.random() * numbers.length);
+            shuffledButtons.push(numbers[randomIndex]);
+            numbers.splice(randomIndex, 1);
+        }
+
+        const generated = {
+            created: true,
+            rocketBox: rocketBox,
+            numbers: numbers,
+            buttons: shuffledButtons,
+            completed: 0,
+        };
+
+        setScenario(generated);
+    };
+    const reset = () => {
+        setButtons({
+            "1": false,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": false,
+        });
+        setRocketBox(["", "", "", "", ""]);
+        setCompleted(0);
+        let newRound = round + 1;
+        setRound(newRound);
+    };
     useEffect(() => {
-        if (completed == 5) {
+        createScenario(round);
+    }, [round]);
+    useEffect(() => {
+        if (completed == round + 2) {
             // FETCH TO CREATE THE LEVEL COMPLETED ?
             console.log("pushing data");
         }
     }, [completed]);
-    if (completed == 5) {
+    useEffect(() => {
+        createScenario(1);
+    }, []);
+    if (completed == round + 2) {
         return (
             <div
                 className={
-                    "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1 success-screen bg-galaxy"
+                    "flex font-nunito flex-col justify-between items-center sm:justify-center py-12 md:pt-0 h-[100vh] w-full gap-1 success-screen bg-galaxy"
                 }
             >
                 <div className="text-3xl h-16 text-white">Stellar Work!</div>
@@ -70,11 +118,22 @@ const Level1 = (props: LevelProps): JSX.Element => {
                 </div>
                 {/* Button Options */}
                 <div className="flex gap-6 flex-col justify-center">
-                    <NavLink to="/completed">
-                        <button className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-2">
-                            Continue
-                        </button>
-                    </NavLink>
+                    {round < 3 ? (
+                        <>
+                            <button
+                                onClick={reset}
+                                className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-20"
+                            >
+                                Continue
+                            </button>
+                        </>
+                    ) : (
+                        <NavLink to="/completed">
+                            <button className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-20">
+                                Finish
+                            </button>
+                        </NavLink>
+                    )}
                 </div>
             </div>
         );
@@ -82,7 +141,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
         return (
             <div
                 className={
-                    "flex font-nunito flex-col justify-start items-center sm:justify-center pt-12 md:pt-0 h-[100vh] w-full gap-1 "
+                    "flex font-nunito flex-col justify-center items-center sm:justify-center md:pt-0 h-[100vh] w-full gap-1 "
                 }
             >
                 <NavLink to="/worlds">
@@ -112,7 +171,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
                 >
                     <Rocket />
                     <div className="flex flex-col-reverse items-center justify-center z-10 absolute top gap-5 font-bolder">
-                        {rocketBox.map((e, i) => {
+                        {scenario.rocketBox.map((e, i) => {
                             if (buttons[i + 1] == false) {
                                 return (
                                     <button
@@ -155,7 +214,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
                             to build your rocket!
                         </div>
                         <div className="flex gap-3 justify-center">
-                            {numOrd.map((number, i) => {
+                            {scenario.buttons.map((number, i) => {
                                 if (!buttons[number]) {
                                     return (
                                         <button

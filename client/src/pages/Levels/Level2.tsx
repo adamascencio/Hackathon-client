@@ -25,7 +25,7 @@ const Level2 = (props: LevelProps): JSX.Element => {
 
     const [wrong, setWrong] = useState("");
     const planet = <img className="w-52 h-52" src={PlanetImg}></img>;
-    
+
     const moon = Moon;
     const astro = Astro;
     const allMoons = {
@@ -153,7 +153,7 @@ const Level2 = (props: LevelProps): JSX.Element => {
                                 onClick={reset}
                                 className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-20"
                             >
-                                Complete
+                                Continue
                             </button>
                         </>
                     ) : (

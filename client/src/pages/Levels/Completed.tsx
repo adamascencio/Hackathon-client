@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 interface CompletedProps {
-    // user: User | null;
+    level: number;
+    setLevel: Function;
 }
 
 const Completed = (props: CompletedProps): JSX.Element => {
@@ -66,15 +67,21 @@ const Completed = (props: CompletedProps): JSX.Element => {
     return (
         <>
             <div className="flex h-[100vh] justify-center items-center flex-col bg-orbit-no-rings">
-                <div className="text-2xl font-bold mb-4">Level 1</div>
+                <div className="text-2xl font-bold mb-4">
+                    Level {props.level}
+                </div>
                 <div className="h-96 w-56 bg-[#DB737380] my-6 rounded-full flex justify-between flex-col items-center">
                     {/* Stars Container */}
                     <div className="stars flex justify-between">
-                        <div className="w-16 h-16 star1 star1-twist-in">{star}</div>
+                        <div className="w-16 h-16 star1 star1-twist-in">
+                            {star}
+                        </div>
                         <div className="w-[4.5rem] h-[4.5rem] star2 star2-slide-up-in">
                             {star}
                         </div>
-                        <div className="w-16 h-16 star3 star3-twist-in">{star}</div>
+                        <div className="w-16 h-16 star3 star3-twist-in">
+                            {star}
+                        </div>
                     </div>
                     <div className="w-32 h-32 rounded-full bg-blue-100"></div>
                     <div className="w-40 h-10 flex flex-grow">
@@ -88,7 +95,7 @@ const Completed = (props: CompletedProps): JSX.Element => {
                             <div className="text-white font-boldish flex flex-row items-center">
                                 <div className="w-6 h-6">{moon}</div>
                                 <div className="w-20 h-6 flex justify-center items-center">
-                                    +822 XP
+                                    {"+" + props.level * 100 + "XP"}
                                 </div>
                             </div>
                         </div>
@@ -96,9 +103,18 @@ const Completed = (props: CompletedProps): JSX.Element => {
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <button className="rounded-full h-10 w-52 bg-beyondBlue text-white font-bold">
-                        Next
-                    </button>
+                    <NavLink to={"/level" + (props.level + 1)}>
+                        <button
+                            onClick={() => {
+                                let newLevel = props.level + 1;
+
+                                props.setLevel(newLevel);
+                            }}
+                            className="rounded-full h-10 w-52 bg-beyondBlue text-white font-bold"
+                        >
+                            Next
+                        </button>
+                    </NavLink>
                     <NavLink to="/worlds">
                         <button className="rounded-full h-10 w-52 border-2 border-black font-bold">
                             Exit
