@@ -4,11 +4,21 @@ Welcome to Addventures!
 
 Addventures is a gamified math learning application for kids.
 
+We started with a problem: Math isn't fun - but it's important! How might we make math exciting and engaging for kids?
+
+We conducted user interviews with kids in the preschool age range. Some insights we came away with were:
+- Place rankings like first, second & so on, feel better than having "winners" and "losers"
+- Competition can feel good because you get to celebrate others
+- Too much external input can feel overwhelming
+
+
+
 This project was created as part of the [General Assembly](https://generalassemb.ly) Spring 2023 Hackathon. The theme was "Gamification".
 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
+  - [Wireframes + ERD](#design)
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -17,10 +27,16 @@ This project was created as part of the [General Assembly](https://generalassemb
 ## Getting Started
 
 Note that both the front-end and back-end are included in this "mono-repo".
+
 The front-end is in the client directory.
+
 The back-end is in the server directory.
 
 - [mono-repo](https://github.com/TannerEsch/Addventures)
+
+### Wireframes + ERD
+- [Figma Wireframes](https://www.figma.com/file/c4pwe7VldO8a8KCT7BUmVT/Addventures?node-id=32-399&t=tmhsTpP1d6yy1L1K-0)
+- [ERD on Lucid](https://lucid.app/lucidchart/c10a82ca-8afb-4308-9a33-f938932c9e5c/edit?invitationId=inv_cec4e048-e08f-4f23-a2ac-30ced984af86&page=0_0#)
 
 ### Installation
 
