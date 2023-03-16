@@ -4,12 +4,11 @@ import { User } from "../../types/models";
 import "./Levels.css";
 
 import Rocket from "./Rocket";
-interface LevelProps {
-    // user: User | null;
-}
+// interface LevelProps {
+//     level: number;
+// }
 
-const Level1 = (props: LevelProps): JSX.Element => {
-    // const { user } = props;
+const Level1 = (props: any): JSX.Element => {
     const [round, setRound] = useState(1);
     const [completed, setCompleted] = useState(0);
     const [scenario, setScenario] = useState({
@@ -51,7 +50,6 @@ const Level1 = (props: LevelProps): JSX.Element => {
         }
     };
     const createScenario = (newRound) => {
-        console.log("creating scenario for round ", newRound);
         let rocketBox: any = [];
         let numbers: any = [];
         let shuffledButtons: any = [];
@@ -59,14 +57,13 @@ const Level1 = (props: LevelProps): JSX.Element => {
             rocketBox.push("");
             numbers.push(`${i}`);
         }
-        console.log(numbers);
 
         for (let i = 1; i < newRound + 3; i++) {
             let randomIndex = Math.floor(Math.random() * numbers.length);
             shuffledButtons.push(numbers[randomIndex]);
             numbers.splice(randomIndex, 1);
         }
-        console.log(shuffledButtons);
+
         const generated = {
             created: true,
             rocketBox: rocketBox,
@@ -74,7 +71,7 @@ const Level1 = (props: LevelProps): JSX.Element => {
             buttons: shuffledButtons,
             completed: 0,
         };
-        console.log(generated);
+
         setScenario(generated);
     };
     const reset = () => {
