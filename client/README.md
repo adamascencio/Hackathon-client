@@ -1,15 +1,13 @@
 # Addventures
 
+Welcome to Addventures!
 
+This project was part of the General Assembly Spring 2023 Hackathon.
 
-
-
-A brief description of what the project does.
 
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -17,11 +15,11 @@ A brief description of what the project does.
 
 ## Getting Started
 
-Instructions for setting up the project locally.
+Note that both the front-end and back-end are included in this "mono-repo".
+The front-end is in the client directory.
+The back-end is in the server directory.
 
-### Prerequisites
-
-List any dependencies or prerequisites required to run the project.
+- [mono-repo](https://github.com/TannerEsch/Addventures)
 
 ### Installation
 
@@ -40,7 +38,13 @@ In your terminal:
 
 ## Usage
 
-Instructions for how to use the project, along with any relevant screenshots or examples.
+Both the front-end and back-end must be running to load the app localy. 
+You will also need to setup your own SQL server, and modify the back-end code to point to that server.
+
+To side-step that, you can navigate directly to pages in the location bar of your browser:
+    `'/level1'`
+    `'/worlds'`
+    This method may cause some assets (images) to not load property.
 
 ## Contributing
 
@@ -48,7 +52,7 @@ Guidelines for contributing to the project, including how to submit pull request
 
 ## License
 
-Information about the license under which the project is released.
+GNU General Public License (GPL)
 
 ## Acknowledgements
 
