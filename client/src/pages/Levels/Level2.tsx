@@ -151,14 +151,14 @@ const Level2 = (props: LevelProps): JSX.Element => {
                         <>
                             <button
                                 onClick={reset}
-                                className="h-12 w-64 rounded rounded-[1rem] text-xl text-white bg-beyondBlue my-2"
+                                className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-2 mb-20"
                             >
                                 Complete
                             </button>
                         </>
                     ) : (
                         <NavLink to="/completed">
-                            <button className="h-12 w-64 rounded rounded-[1rem] text-xl text-white bg-beyondBlue my-2">
+                            <button className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-2">
                                 Finish
                             </button>
                         </NavLink>
@@ -191,18 +191,18 @@ const Level2 = (props: LevelProps): JSX.Element => {
                         </svg>
                     </div>
                 </NavLink>
-                <div className="h-2 w-48 bg-gray-100 rounded  rounded-full">
+                <div className="h-2 w-48 bg-gray-100  rounded-full">
                     {rounds == 1 ? (
                         <div
-                            className={`h-2  bg-gray-600 rounded rounded-full w-1/4`}
+                            className={`h-2  bg-gray-600 rounded-full w-1/4`}
                         ></div>
                     ) : rounds == 2 ? (
                         <div
-                            className={`h-2  bg-gray-600 rounded rounded-full w-2/4`}
+                            className={`h-2  bg-gray-600 rounded-full w-2/4`}
                         ></div>
                     ) : (
                         <div
-                            className={`h-2  bg-gray-600 rounded rounded-full w-3/4`}
+                            className={`h-2  bg-gray-600 rounded-full w-3/4`}
                         ></div>
                     )}
                 </div>
