@@ -229,8 +229,8 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
               :null}
               <div className='flex flex-col w-screen items-center'>
             {page == 4? 
-              <div onClick={(e) => handleSubmit(e)} className='rounded-xl cursor-pointer bg-martianMauve h-15 mt-10 text-white text-center font-bolder px-4 py-4'>{!isSubmitted ? "Create Accout with personalizations" : "🚀 Sending..."}</div>
-            :<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer w-fit px-28 bg-martianMauve h-15 mt-10 text-white text-center font-bolder py-4'>Continue</div>
+              <div onClick={(e) => handleSubmit(e)} className='rounded-xl cursor-pointer bg-beyondBlue h-15 mt-10 text-white text-center font-bolder px-4 py-4'>{!isSubmitted ? "Create Accout with personalizations" : "🚀 Sending..."}</div>
+            :<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer w-fit px-36 mb-8 bg-beyondBlue h-15 text-white text-center font-bolder py-4'>Continue</div>
           }
           {page != 1 && page !=4?<div onClick={(e)=> changePage()} className='rounded-xl w-fit px-32 cursor-pointer h-15 mt-4 text-valvetNight border-[3px] border-valvetNight text-center font-bolder py-4'>Skip</div> :null}
           {page == 4?<div onClick={(e)=> changePage()} className='rounded-xl w-fit px-9 cursor-pointer h-14 mt-4 text-valvetNight border-[3px] border-valvetNight text-center text-xl font-bolder py-3'>Skip and create account</div> :null}
