@@ -151,14 +151,14 @@ const Level2 = (props: LevelProps): JSX.Element => {
                         <>
                             <button
                                 onClick={reset}
-                                className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-2 mb-20"
+                                className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-20"
                             >
                                 Complete
                             </button>
                         </>
                     ) : (
                         <NavLink to="/completed">
-                            <button className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-2">
+                            <button className="h-12 w-64 rounded-[1rem] text-xl text-white bg-beyondBlue my-20">
                                 Finish
                             </button>
                         </NavLink>
