@@ -114,6 +114,10 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
   }
   const goBack = () => {
     switch(page){
+      case 1:
+       setPage1(whiteRect)  
+        navigate('/')
+       break
         case 2:
           console.log(page)
          setPage2(whiteRect)  
