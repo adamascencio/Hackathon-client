@@ -7,7 +7,6 @@ import {
   ChangePasswordFormData,
   LoginFormData,
   SignupFormData,
-  PhotoFormData
 } from '../Types/forms'
 import { User } from '../types/models'
 
@@ -22,17 +21,21 @@ async function signup(
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
+      
     })
+    console.log(photoFormData)
     const json = await res.json()
+    console.log('madeit1')
     if (json.err) {
+      console.log('2asdf')
       throw new Error(json.err)
     } else if (json.token) {
+      console.log('3asdf')
       tokenService.setToken(json.token)
       const user = tokenService.getUserFromToken()
-      if (photoFormData.photo && user) {
-        const photoData = new FormData()
-        photoData.append('photo', photoFormData.photo)
-        await addProfilePhoto(photoData, user.profile.id)
+      if (photoFormData && user) {
+        console.log('photodata4', photoFormData)
+        await addProfilePhoto(photoFormData, user.profile.id)
       }
     }
   } catch (error) {

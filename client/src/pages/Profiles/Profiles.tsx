@@ -12,6 +12,7 @@ import { ProfileDailyChallenge, ProfileFeaturedGames, ProfileMathByTopic } from 
 
 const Profiles = (): JSX.Element => {
   const [profiles, setProfiles] = useState<Profile[]>([])
+  console.log(profiles)
 
   useEffect((): void => {
     const fetchProfiles = async (): Promise<void> => {

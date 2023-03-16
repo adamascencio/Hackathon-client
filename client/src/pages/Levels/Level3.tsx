@@ -56,7 +56,7 @@ useEffect(() => {
   return (
     <>
     <div className='w-screen absolute h-[40%] top-20'>
-        <div className='fixed top-1 font-bolder text-[3.5rem]'><BsArrowLeftShort/></div>
+        <div className='fixed top-1 font-bolder text-[3.5rem]' onClick={() => navigate('/worlds')}><BsArrowLeftShort/></div>
         <div className='text-center mt-[-4rem] bg-valvetNight rounded-xl p-1 w-fit text-white font-nunito font-bolder mx-auto'>XP {xp}</div>
         <div className='mx-20 mt-2 w-screen'>
         <div className='absolute bg-gray-200 w-[16rem] h-2 rounded-xl'></div>

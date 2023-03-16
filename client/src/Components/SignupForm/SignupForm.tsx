@@ -48,24 +48,12 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
   }
 
   const handlePhotoChange = (person:any):any => {
-    return new Promise((resolve, reject)=> {
       setPhotoData(person)
-      console.log("phto1", photoData)
-      resolve(console.log(photoData))
-    })
   }
 
-  console.log("phto2", photoData)
-
-  async function pData(person:any):Promise<any> {
-   await handlePhotoChange(person).then(response=> {
-    console.log("phto3", response)
-  })
-  }
 
 
   const handleSubmit = async (evt: React.FormEvent): Promise<void> => {
-    console.log("alo;ksdjhf;lkadsjf;", photoData)
     evt.preventDefault()
     if(isSubmitted) return
     try {
@@ -150,49 +138,49 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
     <form onSubmit={handleSubmit}>
   
    {page == 1?
-   <>     
+   <> 
     <h1 className='text-2xl text-center font-nunito font-boldest mt-[-2rem] mb-10'>Welcome to Addventures!</h1>
     <div className="flex flex-col h-32">
       <div className='flex'>
-        <label htmlFor="email" className="font-nunito font-bolder text-xl  mr-auto" >Email</label>
-        <label htmlFor="email" className='font-nunito font-bolder'>required*</label>
+        <label htmlFor="email" className="font-nunito font-bolder text-xl  mr-auto ml-6" >Email</label>
+        <label htmlFor="email" className='font-nunito font-bolder mr-6'>required*</label>
       </div>
-        <input type="text" className="border-gray-400 border-[1px] bg-asteroidGray rounded-lg h-[50%]" value={email} name="email"onChange={handleChange}/>
+        <input type="text" className="border-gray-400 border-[1px] mx-auto w-[90%] bg-asteroidGray rounded-lg h-[50%]" value={email} name="email"onChange={handleChange}/>
       </div>
 
       <div className="flex flex-col h-32">
-        <label htmlFor="name" className="font-nunito font-bolder text-xl">Screen Name</label>
-        <input type="text" className="border-gray-400 border-[1px] bg-asteroidGray rounded-lg h-[50%] " value={name} name="name" onChange={handleChange}/>
+        <label htmlFor="name" className="font-nunito font-bolder text-xl ml-6">Screen Name</label>
+        <input type="text" className="border-gray-400 border-[1px] w-[90%] mx-auto bg-asteroidGray rounded-lg h-[50%] " value={name} name="name" onChange={handleChange}/>
       </div>
 
       <div className="flex flex-col h-32">
       <div className='flex'>
-        <label htmlFor="password" className="font-nunito font-bolder text-xl  mr-auto">Password</label>
-        <label htmlFor="email" className='font-nunito font-bolder'>required*</label>
+        <label htmlFor="password" className="font-nunito font-bolder ml-6 text-xl  mr-auto">Password</label>
+        <label htmlFor="email" className='font-nunito font-bolder mr-6'>required*</label>
         </div>
-        <input className="border-gray-400 border-[1px] rounded-lg bg-asteroidGray h-[50%]" type="password" value={password} name="password" onChange={handleChange}/>
+        <input className="border-gray-400 border-[1px] rounded-lg w-[90%] mx-auto bg-asteroidGray h-[50%]" type="password" value={password} name="password" onChange={handleChange}/>
       </div>
 
       <div className="flex flex-col h-32">
       <div className='flex'>
-        <label htmlFor="confirm" className="font-nunito font-bolder text-xl mr-auto">Confirm Password</label>
-        <label htmlFor="email" className='font-nunito font-bolder'>required*</label>
+        <label htmlFor="confirm" className="font-nunito font-bolder text-xl ml-6 mr-auto">Confirm Password</label>
+        <label htmlFor="email" className='font-nunito font-bolder mr-6'>required*</label>
       </div>
-       <input className="border-gray-400 border-[1px] rounded-lg bg-asteroidGray h-[50%]" type="password" value={passwordConf} name="passwordConf" onChange={handleChange}/>
+       <input className="border-gray-400 border-[1px] rounded-lg w-[90%] mx-auto bg-asteroidGray h-[50%]" type="password" value={passwordConf} name="passwordConf" onChange={handleChange}/>
       </div>
       </>
       :null}        
        {page == 2? 
        <>
            <h1 className='text-2xl text-center font-nunito font-boldest mt-[-2rem] mb-10'>Choose Your Avatar</h1>
-                <div>
+                <div className='flex flex-col items-center'>
                   <div className="flex p-4"> 
-                    <img src={hannah} onClick={(e) => pData(hannah)} className="outline-yellow-500 hover:outline rounded-[50%]" />
-                    <img src={erick} onClick={(e) => pData(erick)} className="ml-2 outline-yellow-500 hover:outline rounded-[50%]" />
+                    <img src={hannah} onClick={(e) => handlePhotoChange(hannah)} className="outline-yellow-500 hover:outline rounded-[50%]" />
+                    <img src={erick} onClick={(e) => handlePhotoChange(erick)} className="ml-2 outline-yellow-500 hover:outline rounded-[50%]" />
                   </div>
                   <div className='flex p-4'>
-                    <img src={hansel} onClick={(e) => pData(hansel)} className="mr-1 outline-yellow-500 hover:outline rounded-[55%]"/>
-                    <img src={conan} onClick={(e) => pData(conan)} className="outline-yellow-500 hover:outline rounded-[50%]" />
+                    <img src={hansel} onClick={(e) => handlePhotoChange(hansel)} className="mr-1 outline-yellow-500 hover:outline rounded-[55%]"/>
+                    <img src={conan} onClick={(e) => handlePhotoChange(conan)} className="outline-yellow-500 hover:outline rounded-[50%]" />
                   </div>
               </div>
               <div className='flex font-nunito font-bolder items-center justify-center mt-12'><TiArrowSync /> Randomize</div>
@@ -239,12 +227,14 @@ const SignupForm = (props: AuthFormProps): JSX.Element => {
               </div>
               </>
               :null}
+              <div className='flex flex-col w-screen items-center'>
             {page == 4? 
-              <div onClick={(e) => handleSubmit(e)} className='rounded-xl cursor-pointer bg-martianMauve h-15 mt-10 text-white text-center font-bolder py-4'>{!isSubmitted ? "Create Accout with personalizations" : "🚀 Sending..."}</div>
-            :<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer bg-martianMauve h-15 mt-10 text-white text-center font-bolder py-4'>Continue</div>
+              <div onClick={(e) => handleSubmit(e)} className='rounded-xl cursor-pointer bg-martianMauve h-15 mt-10 text-white text-center font-bolder px-4 py-4'>{!isSubmitted ? "Create Accout with personalizations" : "🚀 Sending..."}</div>
+            :<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer w-fit px-28 bg-martianMauve h-15 mt-10 text-white text-center font-bolder py-4'>Continue</div>
           }
-          {page != 1?<div onClick={(e)=> changePage()} className='rounded-xl cursor-pointer h-15 mt-4 text-valvetNight border-[3px] border-valvetNight text-center font-bolder py-4'>Skip {page== 4?"and Create account" :null }</div> :null}
-
+          {page != 1 && page !=4?<div onClick={(e)=> changePage()} className='rounded-xl w-fit px-32 cursor-pointer h-15 mt-4 text-valvetNight border-[3px] border-valvetNight text-center font-bolder py-4'>Skip</div> :null}
+          {page == 4?<div onClick={(e)=> changePage()} className='rounded-xl w-fit px-9 cursor-pointer h-14 mt-4 text-valvetNight border-[3px] border-valvetNight text-center text-xl font-bolder py-3'>Skip and create account</div> :null}
+          </div>
 </form>
       </div>
       </>
