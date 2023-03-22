@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { User } from "../../types/models";
 import Moon from "./Moon";
 import Planet from "./Planet";
 import PlanetImg from "./PlanetImg.png";
