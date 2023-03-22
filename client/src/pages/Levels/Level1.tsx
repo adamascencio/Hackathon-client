@@ -32,13 +32,13 @@ const Level1 = (props: any): JSX.Element => {
         setActive(e.target.value);
     };
     const handleRocketBox = (e: any) => {
-        const boxIdx: any = e.target.id[2];
+        const boxIdx: string = e.target.id[2];
         if (boxIdx == active) {
             let newButtons = { ...buttons };
-            newButtons[boxIdx] = true;
+            newButtons[boxIdx as keyof typeof newButtons] = true;
             setButtons(newButtons);
             let newBox = [...rocketBox];
-            newBox[boxIdx - 1] = active;
+            newBox[Number(boxIdx) - 1] = active;
             setRocketBox(newBox);
             setActive("");
             setCompleted(completed + 1);
@@ -49,7 +49,7 @@ const Level1 = (props: any): JSX.Element => {
             }, 1000);
         }
     };
-    const createScenario = (newRound) => {
+    const createScenario = (newRound: number) => {
         let rocketBox: any = [];
         let numbers: any = [];
         let shuffledButtons: any = [];
@@ -172,7 +172,7 @@ const Level1 = (props: any): JSX.Element => {
                     <Rocket />
                     <div className="flex flex-col-reverse items-center justify-center z-10 absolute top gap-5 font-bolder">
                         {scenario.rocketBox.map((e, i) => {
-                            if (buttons[i + 1] == false) {
+                            if (buttons[String(i + 1) as keyof typeof buttons] == false) {
                                 return (
                                     <button
                                         onClick={handleRocketBox}
@@ -181,7 +181,7 @@ const Level1 = (props: any): JSX.Element => {
                                         key={i}
                                         className={
                                             "padding-1 border-black rounded border-2 h-10 w-10 " +
-                                            (wrong == i + 1
+                                            (wrong === String(i + 1)
                                                 ? " bg-red-200 animate-bounce "
                                                 : " bg-white ")
                                         }
