@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import * as profileService from '../../Services/profileService'
 
 // types
-import { Profile } from '../../types/models'
+import { Profile } from '../../Types/models'
 
 import { ProfileDailyChallenge, ProfileFeaturedGames, ProfileMathByTopic } from './ProfileComps'
 

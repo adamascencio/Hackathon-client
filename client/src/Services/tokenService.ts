@@ -2,7 +2,7 @@
 import jwt_decode, { JwtPayload } from 'jwt-decode'
 
 // types
-import { User } from '../types/models'
+import { User } from '../Types/models'
 
 interface Payload extends JwtPayload {
   user: User

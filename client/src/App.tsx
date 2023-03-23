@@ -29,7 +29,7 @@ import "./css/app.css";
 //utils
 import calculate from "./utils/math";
 // types
-import { Profile, User } from "./types/models";
+import { Profile, User } from "./Types/models";
 import Completed from "./pages/Levels/Completed";
 
 function App(): JSX.Element {

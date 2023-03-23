@@ -1,6 +1,5 @@
 import { useEffect, useState, MouseEvent } from "react";
 import { NavLink } from "react-router-dom";
-import { User } from "../../types/models";
 import "./Levels.css";
 
 import Rocket from "./Rocket";

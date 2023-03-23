@@ -3,7 +3,7 @@ import * as tokenService from './tokenService'
 import axios from 'axios'
 
 // types
-import { Profile } from '../types/models'
+import { Profile } from '../Types/models'
 
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/profiles`
 
