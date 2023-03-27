@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { User } from "../../types/models";
 import Moon from "./Moon";
 import Planet from "./Planet";
 import PlanetImg from "./PlanetImg.png";
@@ -11,11 +10,19 @@ interface LevelProps {
     // user: User | null;
 }
 
+interface Scenario {
+    created: boolean;
+    nMoons: number;
+    moons: any;
+    buttons: any;
+    correct: string;
+}
+
 const Level2 = (props: LevelProps): JSX.Element => {
     // const { user } = props;
     const [rounds, setRounds] = useState(1);
     const [completed, setCompleted] = useState(false);
-    const [scenario, setScenario] = useState({
+    const [scenario, setScenario] = useState<Scenario>({
         created: false,
         nMoons: 0,
         moons: [],
@@ -61,7 +68,7 @@ const Level2 = (props: LevelProps): JSX.Element => {
             shuffledButtons.push(numbers[randomIndex]);
             numbers.splice(randomIndex, 1);
             if (i < nMoons) {
-                moons.push(allMoons[i]);
+                moons.push(allMoons[i as keyof typeof allMoons]);
             }
         }
 
@@ -111,7 +118,7 @@ const Level2 = (props: LevelProps): JSX.Element => {
                 >
                 </svg> */}
                 {planet}
-                {scenario.created && scenario.moons.map((moon) => moon)}
+                {scenario.created && scenario.moons.map((moon: any) => moon)}
             </div>
         </div>
     );
@@ -218,7 +225,7 @@ const Level2 = (props: LevelProps): JSX.Element => {
                         </div>
                         <div className="flex gap-6 justify-center">
                             {scenario.created &&
-                                scenario.buttons.map((button, i) => (
+                                scenario.buttons.map((button: any, i: number) => (
                                     <button
                                         className={
                                             "rounded h-14 w-10 text-2xl font-bolder " +
